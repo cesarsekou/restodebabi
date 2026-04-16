@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Le Porc de Chez Nous — Restaurant de Porc Grillé à Abidjan | Livraison Rapide</title>
+<meta name="description" content="Le Porc de Chez Nous, le meilleur restaurant de viande de porc à Abidjan. Porc grillé, braisé, frit. Commandez en ligne et faites-vous livrer en 45 min."/>
+<meta name="keywords" content="porc grillé Abidjan, restaurant porc, braisé, frit, livraison Abidjan, Le Porc de Chez Nous, cuisine ivoirienne"/>
+<meta name="author" content="Le Porc de Chez Nous"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://leporcdenouci.ci"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://leporcdenouci.ci"/>
+<meta property="og:title" content="Le Porc de Chez Nous — Le Meilleur Porc Grillé d'Abidjan"/>
+<meta property="og:description" content="Commandez nos spécialités de porc grillé, braisé et frit. Livraison rapide à Abidjan."/>
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Nm6s_or2pvEZOm3S9pl4eljpPssBVHNRw6zOqIWYVqo1AfAnSDIXEq7l2-pIqh2BaGSMjJ0VaK3pX-ICPG6YE4JBzKQmU5O-4nsTBiT1MawHG1r9yYqSsIMmRyVbyvWHasfBYbUVwTpx9hKPx4S8QasO_DaEpWGDR9ZfHJTFFnb-J8Fk_8t601Nw9NsjMW83EOGHCtwj5jZCLub_CADZ93yXuEp37-01vXnVODpkZd6ZcIYXaoFK4cU0qX5HOS5xydMRV1zplf0"/>
+<meta property="og:locale" content="fr_CI"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Le Porc de Chez Nous — Le Meilleur Porc Grillé d'Abidjan"/>
+<meta name="twitter:description" content="Commandez nos spécialités de porc grillé, braisé et frit. Livraison rapide à Abidjan."/>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#5f1600"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍖</text></svg>"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍖</text></svg>"/>
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://lh3.googleusercontent.com"/>
+<link rel="preconnect" href="https://images.unsplash.com"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-secondary-fixed": "#2b1613", "surface-container-low": "#fbf3e4",
+        "on-surface": "#1e1b13", "outline": "#827470", "on-secondary": "#ffffff",
+        "primary": "#5f1600", "inverse-primary": "#ffb59f", "tertiary": "#47281e",
+        "outline-variant": "#d4c3be", "secondary-fixed": "#ffdad4", "error-container": "#ffdad6",
+        "secondary": "#745853", "on-primary-fixed-variant": "#852300",
+        "on-primary": "#ffffff", "on-tertiary": "#ffffff", "surface-dim": "#e1d9cb",
+        "on-tertiary-container": "#daaa9b", "on-secondary-container": "#795c57",
+        "surface-container": "#f5edde", "secondary-fixed-dim": "#e3beb8",
+        "primary-fixed": "#ffdbd0", "surface-bright": "#fff8ef",
+        "on-primary-container": "#ff9b7d", "primary-container": "#862300",
+        "on-tertiary-fixed-variant": "#613e33", "surface": "#fff8ef",
+        "inverse-surface": "#343026", "on-error-container": "#93000a",
+        "primary-fixed-dim": "#ffb59f", "tertiary-container": "#613e33",
+        "tertiary-fixed": "#ffdbd0", "surface-container-lowest": "#ffffff",
+        "tertiary-fixed-dim": "#edbbac", "on-tertiary-fixed": "#2f140b",
+        "on-background": "#1e1b13", "on-secondary-fixed-variant": "#5b403c",
+        "secondary-container": "#fed7d0", "surface-tint": "#ac3509",
+        "inverse-on-surface": "#f8f0e1", "surface-variant": "#e9e2d3",
+        "on-surface-variant": "#504441", "on-primary-fixed": "#3a0a00",
+        "background": "#fff8ef", "error": "#ba1a1a", "on-error": "#ffffff",
+        "surface-container-highest": "#e9e2d3", "surface-container-high": "#efe7d9",
+        "success": "#2e7d32"
+      },
+      borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+      fontFamily: { headline: ["Plus Jakarta Sans"], body: ["Manrope"], label: ["Manrope"] }
+    }
+  }
+}
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Le Porc de Chez Nous","description":"Le meilleur restaurant de viande de porc à Abidjan","url":"https://leporcdenouci.ci","servesCuisine":["Cuisine Ivoirienne","Porc Grillé","Braisé"],"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"priceRange":"$$","openingHours":"Mo-Su 10:00-22:00"}
+</script>
+
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .glass { background: rgba(255, 248, 239, 0.35); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.3); }
+  .glass-dark { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+  .hero-gradient { background: radial-gradient(circle at top right, rgba(134, 35, 0, 0.15), transparent 60%); }
+  .page { display: none; }
+  .page.active { display: block; }
+  .page-transition { animation: pageIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  @keyframes pageIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(172, 53, 9, 0.3); } 50% { box-shadow: 0 0 30px rgba(172, 53, 9, 0.6); } }
+  @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  @keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes progressBar { from { width: 100%; } to { width: 0%; } }
+  @keyframes splash-logo { 0% { transform: scale(0.5) rotate(-10deg); opacity: 0; } 50% { transform: scale(1.1) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+  @keyframes splash-text { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+  @keyframes splash-out { 0% { opacity: 1; } 100% { opacity: 0; pointer-events: none; } }
+  @keyframes checkmark { 0% { transform: scale(0) rotate(-45deg); opacity: 0; } 50% { transform: scale(1.2) rotate(0deg); } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+  .animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+  .skeleton { background: linear-gradient(90deg, #efe7d9 25%, #f5edde 50%, #efe7d9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 0.75rem; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  body { font-family: 'Manrope', sans-serif; background-color: #fff8ef; color: #1e1b13; overflow-x: hidden; }
+  h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+  *:focus-visible { outline: 3px solid #ac3509; outline-offset: 2px; border-radius: 4px; }
+
+  .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px); background: #343026; color: #fff; padding: 14px 28px; border-radius: 9999px; font-weight: 600; font-size: 14px; z-index: 9999; opacity: 0; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; white-space: nowrap; box-shadow: 0 12px 40px rgba(30,27,19,0.25); }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .badge { position: absolute; top: 12px; left: 12px; z-index: 5; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; backdrop-filter: blur(8px); }
+  .badge-fire { background: rgba(172,53,9,0.9); color: #fff; }
+  .badge-new { background: rgba(71,40,30,0.85); color: #ffdbd0; }
+  .badge-promo { background: rgba(255,181,159,0.95); color: #3a0a00; }
+
+  .whatsapp-fab { position: fixed; bottom: 90px; right: 20px; z-index: 100; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s ease; animation: float 3s ease-in-out infinite; }
+  .whatsapp-fab:hover { transform: scale(1.1); }
+  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+
+  .promo-timer { background: linear-gradient(135deg, #5f1600, #ac3509); color: white; text-align: center; padding: 8px 16px; font-size: 13px; font-weight: 700; }
+  .social-proof { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #504441; font-weight: 600; }
+  .social-proof .dot { width: 6px; height: 6px; border-radius: 50%; background: #25D366; animation: pulse-glow 2s infinite; }
+  .cart-pop { animation: bounceIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+  .product-card { transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(30,27,19,0.12); }
+
+  #splashscreen { position: fixed; inset: 0; z-index: 99999; background: linear-gradient(135deg, #5f1600 0%, #862300 40%, #ac3509 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
+  #splashscreen.hide { animation: splash-out 0.6s ease forwards; }
+
+  /* Accompagnement selector */
+  .accomp-card { border: 2px solid transparent; transition: all 0.3s ease; cursor: pointer; }
+  .accomp-card.selected { border-color: #ac3509; background: rgba(172,53,9,0.08); transform: scale(1.03); }
+  .accomp-card .check-icon { display: none; }
+  .accomp-card.selected .check-icon { display: flex; }
+
+  /* Order confirmation screen */
+  .order-success-icon { animation: checkmark 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+</style>
+</head>
+<body class="min-h-screen antialiased">
+
+<!-- SKIP NAV -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:bg-primary focus:text-white focus:px-6 focus:py-3 focus:rounded-full focus:font-bold">Aller au contenu principal</a>
+
+<!-- SPLASHSCREEN -->
+<div id="splashscreen" role="status" aria-label="Chargement de Le Porc de Chez Nous">
+  <div style="animation: splash-logo 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;">
+    <span class="material-symbols-outlined text-white" style="font-size: 64px; font-variation-settings: 'FILL' 1;">restaurant</span>
+  </div>
+  <h1 style="animation: splash-text 0.6s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;" class="font-headline text-white text-4xl font-extrabold tracking-tight mt-4">Le Porc de Chez Nous</h1>
+  <p style="animation: splash-text 0.6s 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;" class="text-white/70 text-sm font-medium mt-2 tracking-widest uppercase">Le Goût Authentique</p>
+  <div style="animation: splash-text 0.6s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;" class="mt-8 w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+    <div class="h-full bg-white/80 rounded-full" style="animation: progressBar 2s 0.5s linear forwards; width: 100%;"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/2250700000000" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Nous contacter sur WhatsApp" id="whatsapp-fab">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 1: BIENVENUE -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-welcome" class="page active">
+  <main class="relative h-screen w-full flex flex-col justify-end overflow-hidden" id="main-content" role="main">
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover" poster="">
+        <source src="premier visuel /2026-01-12_@news_adresses_7594515509538819350.mp4" type="video/mp4"/>
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1e1b13]/40 via-transparent to-[#1e1b13]/70"></div>
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    <div class="absolute top-12 left-0 w-full px-8 z-10 flex flex-col items-center animate-fade-in">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">restaurant</span>
+        <span class="font-headline font-extrabold text-2xl tracking-tighter text-white drop-shadow-lg">Le Porc de Chez Nous</span>
+      </div>
+      <div class="h-[2px] w-12 bg-surface-tint rounded-full opacity-60" aria-hidden="true"></div>
+    </div>
+    <div class="relative z-20 px-6 pb-12 animate-slide-up">
+      <div class="glass rounded-lg p-8 shadow-[0_32px_64px_rgba(30,27,19,0.15)] flex flex-col items-center text-center max-w-lg mx-auto">
+        <h1 class="font-headline text-[2.5rem] md:text-[2.75rem] leading-[1.1] font-extrabold text-on-surface tracking-tight mb-4">
+          Savourez la <span class="text-surface-tint">Meilleure</span> Viande de Porc d'Abidjan !
+        </h1>
+        <p class="font-body text-lg text-on-surface-variant/90 leading-relaxed mb-6 max-w-[320px]">
+          Découvrez nos spécialités de porc grillé, braisé et frit. Commandez et faites-vous livrer.
+        </p>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-primary-container border-2 border-white flex items-center justify-center text-xs text-white font-bold">A</div>
+            <div class="w-8 h-8 rounded-full bg-tertiary border-2 border-white flex items-center justify-center text-xs text-white font-bold">K</div>
+            <div class="w-8 h-8 rounded-full bg-surface-tint border-2 border-white flex items-center justify-center text-xs text-white font-bold">M</div>
+          </div>
+          <div class="text-left">
+            <p class="text-sm font-bold text-on-surface">+1 200 clients satisfaits</p>
+            <div class="flex items-center gap-1">
+              <span class="text-surface-tint text-xs">★★★★★</span>
+              <span class="text-xs text-on-surface-variant">4.8/5</span>
+            </div>
+          </div>
+        </div>
+        <button onclick="navigateTo('shop')" class="group relative w-full overflow-hidden rounded-full bg-surface-tint py-5 px-8 flex items-center justify-center transition-all duration-300 active:scale-95 shadow-lg shadow-surface-tint/20">
+          <span class="font-label font-bold text-lg text-on-primary mr-2">Commander</span>
+          <span class="material-symbols-outlined text-on-primary group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true"></div>
+        </button>
+        <div class="mt-6">
+          <button onclick="navigateTo('shop')" class="font-label text-sm font-semibold text-on-surface opacity-70 hover:opacity-100 transition-opacity uppercase tracking-widest">Voir le menu</button>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-surface-tint/10 rounded-full blur-[100px] z-10 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-[20%] left-[-5%] w-48 h-48 bg-primary-container/10 rounded-full blur-[80px] z-10 pointer-events-none" aria-hidden="true"></div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 2: BOUTIQUE (SHOP) — SANS VIDE, SANS AVATAR -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-shop" class="page">
+  <!-- Promo Timer Bar collé en haut -->
+  <div class="promo-timer" id="promo-bar" role="status">
+    <div class="flex items-center justify-center gap-2 flex-wrap">
+      <span class="material-symbols-outlined text-sm" aria-hidden="true">timer</span>
+      <span>🔥 Offre Spéciale — <strong id="promo-countdown">02:30:00</strong> restantes — <strong>-30% Pack Famille</strong></span>
+    </div>
+  </div>
+
+  <!-- Header SANS avatar -->
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]" role="banner">
+    <div class="flex items-center gap-3">
+      <button onclick="navigateTo('welcome')" class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-surface-container/50 transition-colors active:scale-95" aria-label="Retour accueil">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+      </button>
+      <h1 class="text-xl font-extrabold text-primary font-headline tracking-tight">Le Porc de Chez Nous</h1>
+    </div>
+    <button onclick="navigateTo('cart')" class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Voir le panier">
+      <span class="material-symbols-outlined text-primary" aria-hidden="true">shopping_bag</span>
+      <span id="cart-badge-shop" class="absolute -top-1 -right-1 w-5 h-5 bg-surface-tint text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    </button>
+  </header>
+
+  <main class="pb-32 px-6 max-w-7xl mx-auto" role="main">
+    <!-- Hero Banner -->
+    <section class="relative w-full h-[220px] md:h-[380px] rounded-lg overflow-hidden mb-6 mt-4 shadow-2xl" aria-label="Promotion">
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Nm6s_or2pvEZOm3S9pl4eljpPssBVHNRw6zOqIWYVqo1AfAnSDIXEq7l2-pIqh2BaGSMjJ0VaK3pX-ICPG6YE4JBzKQmU5O-4nsTBiT1MawHG1r9yYqSsIMmRyVbyvWHasfBYbUVwTpx9hKPx4S8QasO_DaEpWGDR9ZfHJTFFnb-J8Fk_8t601Nw9NsjMW83EOGHCtwj5jZCLub_CADZ93yXuEp37-01vXnVODpkZd6ZcIYXaoFK4cU0qX5HOS5xydMRV1zplf0" alt="Promotion Pack Famille" loading="lazy" decoding="async"/>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 to-transparent"></div>
+      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-16">
+        <div class="glass-dark max-w-md p-6 md:p-8 rounded-lg">
+          <span class="text-white/80 font-bold tracking-widest text-xs uppercase mb-2 block">Offre Spéciale Week-end</span>
+          <h2 class="text-white text-4xl md:text-7xl font-extrabold font-headline leading-none mb-4">-30%</h2>
+          <p class="text-white/90 text-base md:text-lg font-medium mb-6">Pack Famille : Porc Braisé + Frit + Attiéké à prix réduit !</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof + Livraison -->
+    <div class="flex items-center justify-between mb-6 px-2 py-3 bg-surface-container/50 rounded-xl">
+      <div class="social-proof"><span class="dot" aria-hidden="true"></span><span>42 commandes aujourd'hui</span></div>
+      <div class="flex items-center gap-1 text-sm font-bold text-primary">
+        <span class="material-symbols-outlined text-sm" aria-hidden="true">delivery_dining</span><span>Livré en ~45 min</span>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="mb-6">
+      <div class="flex items-center bg-surface-container rounded-xl px-4 py-3 gap-3">
+        <span class="material-symbols-outlined text-outline" aria-hidden="true">search</span>
+        <input id="search-input" oninput="filterProducts()" class="bg-transparent border-none focus:ring-0 text-base font-medium w-full placeholder:text-outline" placeholder="Rechercher un plat..." type="search" aria-label="Rechercher un plat"/>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="mb-8" aria-label="Catégories">
+      <h3 class="text-xl font-bold font-headline text-on-surface mb-4">Catégories</h3>
+      <div class="flex gap-3 overflow-x-auto pb-3 no-scrollbar" id="category-filters" role="tablist">
+        <button onclick="filterCategory('all')" data-cat="all" role="tab" aria-selected="true" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 text-sm">Tout</button>
+        <button onclick="filterCategory('braise')" data-cat="braise" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Braisé</button>
+        <button onclick="filterCategory('frit')" data-cat="frit" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Frit au four</button>
+        <button onclick="filterCategory('saute')" data-cat="saute" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Sauté</button>
+        <button onclick="filterCategory('accompagnements')" data-cat="accompagnements" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Accompagnements</button>
+        <button onclick="filterCategory('boissons')" data-cat="boissons" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Boissons</button>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" role="list" aria-label="Liste des plats"></section>
+  </main>
+
+  <!-- Bottom Nav -->
+  <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-[#fff8ef]/10 backdrop-blur-[20px] rounded-t-[2rem] border-t border-white/20 shadow-[0_-8px_48px_rgba(30,27,19,0.08)]" role="navigation" aria-label="Navigation">
+    <button onclick="navigateTo('welcome')" class="flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
+      <span class="material-symbols-outlined" aria-hidden="true">home</span><span class="text-[11px] font-semibold">Accueil</span>
+    </button>
+    <button onclick="navigateTo('shop')" class="flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
+      <span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span><span class="text-[11px] font-semibold">Menu</span>
+    </button>
+    <button onclick="navigateTo('cart')" class="relative flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
+      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span><span class="text-[11px] font-semibold">Panier</span>
+      <span id="cart-badge-nav" class="absolute -top-1 right-1 w-4 h-4 bg-surface-tint text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 3: DÉTAIL + CHOIX ACCOMPAGNEMENT -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-detail" class="page">
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]" role="banner">
+    <div class="flex items-center gap-3">
+      <button onclick="navigateTo('shop')" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors active:scale-95" aria-label="Retour au menu">
+        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+      </button>
+      <span class="text-xl font-extrabold text-primary tracking-tight font-headline">Détails</span>
+    </div>
+    <button onclick="navigateTo('cart')" class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Voir le panier">
+      <span class="material-symbols-outlined text-primary" aria-hidden="true">shopping_bag</span>
+      <span id="cart-badge-detail" class="absolute -top-1 -right-1 w-5 h-5 bg-surface-tint text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    </button>
+  </header>
+
+  <main class="min-h-screen pb-40" role="main">
+    <!-- Hero Image -->
+    <section class="relative h-[350px] md:h-[450px] w-full overflow-hidden">
+      <img id="detail-image" class="w-full h-full object-cover" src="" alt="Photo du plat" loading="lazy" decoding="async"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" aria-hidden="true"></div>
+    </section>
+
+    <div class="px-6 -mt-24 relative z-10 max-w-4xl mx-auto">
+      <div class="glass rounded-lg p-6 md:p-8 shadow-[0_32px_64px_rgba(30,27,19,0.12)]">
+        <!-- Product Info -->
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h1 id="detail-name" class="text-2xl md:text-3xl font-extrabold font-headline text-on-surface tracking-tight mb-1"></h1>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-surface-tint text-sm" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">star</span>
+              <span id="detail-rating" class="text-sm font-bold"></span>
+              <span class="text-xs text-on-surface-variant">•</span>
+              <span id="detail-orders-text" class="text-xs text-on-surface-variant"></span>
+            </div>
+          </div>
+          <span id="detail-price" class="text-2xl font-extrabold font-headline text-primary"></span>
+        </div>
+        <p id="detail-desc" class="text-on-surface-variant leading-relaxed mb-6 text-sm md:text-base"></p>
+
+        <!-- Infos rapides -->
+        <div class="grid grid-cols-4 gap-3 mb-6">
+          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
+            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">local_fire_department</span>
+            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Cuisson</span>
+            <span class="font-bold text-xs">Bien cuit</span>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
+            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">pepper</span>
+            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Piment</span>
+            <span class="font-bold text-xs">À part</span>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
+            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">restaurant</span>
+            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Couverts</span>
+            <span class="font-bold text-xs">Inclus</span>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
+            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">timer</span>
+            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Prépa</span>
+            <span class="font-bold text-xs">~15 min</span>
+          </div>
+        </div>
+
+        <!-- ★ ACCOMPAGNEMENT (remplace "Portion") -->
+        <div class="space-y-4" id="accomp-section">
+          <h3 class="font-headline font-bold text-lg flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary" aria-hidden="true">lunch_dining</span> Choisir un accompagnement
+          </h3>
+          <div class="grid grid-cols-2 gap-3" id="accomp-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Action: Quantité + Continuer -->
+  <div class="fixed bottom-0 left-0 w-full z-50 bg-[#fff8ef]/10 backdrop-blur-[20px] shadow-[0_-8px_48px_rgba(30,27,19,0.08)] rounded-t-[2rem] border-t border-white/20 p-6">
+    <div class="max-w-4xl mx-auto flex items-center gap-4">
+      <div class="flex items-center bg-surface-container-highest rounded-full px-3 py-2" role="group" aria-label="Quantité">
+        <button onclick="changeDetailQty(-1)" class="w-10 h-10 flex items-center justify-center text-primary active:scale-75 transition-transform" aria-label="Diminuer"><span class="material-symbols-outlined" aria-hidden="true">remove</span></button>
+        <span id="detail-qty" class="px-4 font-bold text-lg" aria-live="polite">1</span>
+        <button onclick="changeDetailQty(1)" class="w-10 h-10 flex items-center justify-center text-primary active:scale-75 transition-transform" aria-label="Augmenter"><span class="material-symbols-outlined" aria-hidden="true">add</span></button>
+      </div>
+      <button onclick="goToCheckout()" id="btn-continue" class="flex-1 bg-primary text-white font-headline font-bold text-lg py-4 rounded-full shadow-[0_16px_32px_rgba(95,22,0,0.3)] hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+        Continuer
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 4: PANIER (CART) -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-cart" class="page">
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]">
+    <div class="flex items-center gap-3">
+      <button onclick="navigateTo('shop')" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Retour">
+        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+      </button>
+      <h1 class="text-xl font-extrabold text-primary tracking-tight font-headline">Mon Panier</h1>
+    </div>
+  </header>
+  <main class="px-6 max-w-2xl mx-auto pb-80 pt-4" role="main">
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="text-2xl font-extrabold text-on-surface tracking-tight">Votre Panier</h2>
+      <span id="cart-count-label" class="text-on-surface-variant font-medium text-sm" aria-live="polite">(0 articles)</span>
+    </div>
+    <div id="cart-items-container" class="space-y-4" role="list"></div>
+    <div id="cart-empty" class="hidden flex-col items-center justify-center py-16 text-center">
+      <span class="material-symbols-outlined text-5xl text-outline-variant mb-4" aria-hidden="true">shopping_cart</span>
+      <h3 class="font-headline font-bold text-lg text-on-surface mb-2">Votre panier est vide</h3>
+      <p class="text-on-surface-variant text-sm mb-6">Découvrez notre délicieuse sélection de porc.</p>
+      <button onclick="navigateTo('shop')" class="bg-primary text-white px-8 py-3 rounded-full font-bold active:scale-95 transition-all">Voir le Menu</button>
+    </div>
+  </main>
+  <section id="cart-summary" class="fixed bottom-0 left-0 w-full px-6 pb-8 pt-5 z-40 bg-[#fff8ef]/10 backdrop-blur-[20px] rounded-t-[2rem] border-t border-white/20 shadow-[0_-8px_48px_rgba(30,27,19,0.08)]">
+    <div class="max-w-2xl mx-auto space-y-2">
+      <div class="flex justify-between items-center text-on-surface-variant px-2 text-sm"><span>Sous-total</span><span id="cart-subtotal" class="font-bold">0 FCFA</span></div>
+      <div class="flex justify-between items-center text-on-surface-variant px-2 text-sm"><span>Emballage</span><span class="font-bold">500 FCFA</span></div>
+      <div class="pt-2 mb-3 border-t border-[#1e1b13]/5 flex justify-between items-center px-2">
+        <span class="text-lg font-extrabold text-on-surface">Total</span>
+        <span id="cart-total" class="text-xl font-extrabold text-primary" aria-live="polite">500 FCFA</span>
+      </div>
+      <button onclick="navigateTo('checkout')" class="w-full bg-primary text-white py-4 rounded-full font-bold text-lg shadow-[0_12px_24px_rgba(95,22,0,0.25)] active:scale-95 transition-all flex items-center justify-center gap-3">
+        <span>Passer la commande</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 5: CHECKOUT — Infos Client -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-checkout" class="page">
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]">
+    <div class="flex items-center gap-3">
+      <button onclick="navigateTo('cart')" class="p-2 rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Retour">
+        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+      </button>
+      <h1 class="text-xl font-extrabold text-primary tracking-tight font-headline">Finaliser</h1>
+    </div>
+  </header>
+  <main class="pb-20 px-6 max-w-2xl mx-auto space-y-6 pt-4" role="main">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-extrabold font-headline">Vos Informations</h2>
+      <div class="text-right"><p class="text-xs text-primary font-bold">Livraison ~45-60 min</p></div>
+    </div>
+
+    <!-- Formulaire client -->
+    <section class="space-y-4">
+      <div class="glass p-5 rounded-lg flex flex-col gap-3">
+        <div><label for="cust-name" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Nom et Prénoms *</label>
+        <input type="text" id="cust-name" placeholder="Ex: Kouakou Aman" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="name"></div>
+        <div><label for="cust-phone" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Téléphone *</label>
+        <input type="tel" id="cust-phone" placeholder="Ex: 07 00 00 00 00" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="tel"></div>
+        <div><label for="cust-quartier" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Quartier / Commune *</label>
+        <input type="text" id="cust-quartier" placeholder="Ex: Cocody Riviera" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="address-level2"></div>
+        <div><label for="cust-details" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Précisions pour le livreur</label>
+        <textarea id="cust-details" placeholder="Croisement, repère, couleur du bâtiment..." rows="2" class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium resize-none" autocomplete="street-address"></textarea></div>
+      </div>
+    </section>
+
+    <!-- Moyen de paiement -->
+    <section class="space-y-3">
+      <h3 class="font-headline font-bold text-lg text-tertiary px-1">Moyen de paiement</h3>
+      <div class="grid grid-cols-1 gap-2" role="radiogroup">
+        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+          <input checked name="payment" type="radio" class="hidden" value="wave"/>
+          <div class="w-10 h-10 bg-[#0000ff]/10 rounded-lg flex items-center justify-center"><span class="font-black text-lg text-[#0000ff]" style="font-family:Arial">wave</span></div>
+          <div class="flex-1"><p class="font-bold text-sm">Wave</p><p class="text-xs text-on-surface-variant">Rapide et sécurisé</p></div>
+        </label>
+        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+          <input name="payment" type="radio" class="hidden" value="orange_money"/>
+          <div class="w-10 h-10 bg-[#ff6600]/10 rounded-lg flex items-center justify-center"><span class="font-bold text-lg text-[#ff6600]">OM</span></div>
+          <div class="flex-1"><p class="font-bold text-sm">Orange Money</p></div>
+        </label>
+        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+          <input name="payment" type="radio" class="hidden" value="cash"/>
+          <div class="w-10 h-10 bg-white/80 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-surface" aria-hidden="true">payments</span></div>
+          <div class="flex-1"><p class="font-bold text-sm">Espèces à la livraison</p></div>
+        </label>
+      </div>
+    </section>
+
+    <!-- Récapitulatif -->
+    <section class="space-y-3">
+      <h3 class="font-headline font-bold text-lg text-tertiary px-1">Récapitulatif</h3>
+      <div class="glass p-5 rounded-lg space-y-3">
+        <div id="checkout-items" class="space-y-3"></div>
+        <div class="flex justify-between text-base font-bold pt-3 border-t border-white/20">
+          <span class="text-on-surface">Total à payer</span>
+          <span id="checkout-total" class="text-primary text-lg" aria-live="polite">0 FCFA</span>
+        </div>
+      </div>
+    </section>
+
+    <button onclick="placeOrder()" class="w-full bg-surface-tint text-white py-5 rounded-full font-bold text-lg shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+      <span>Valider la commande</span>
+      <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+    </button>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 6: COMMANDE CONFIRMÉE -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-success" class="page">
+  <main class="min-h-screen flex flex-col items-center justify-center px-8 text-center" role="main">
+    <div class="order-success-icon w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mb-6">
+      <span class="material-symbols-outlined text-success" style="font-size: 56px; font-variation-settings: 'FILL' 1;">check_circle</span>
+    </div>
+    <h1 class="font-headline text-3xl font-extrabold text-on-surface mb-3">Commande Envoyée !</h1>
+    <p class="text-on-surface-variant text-base max-w-sm mb-2">Votre commande <strong id="success-order-id"></strong> a bien été enregistrée.</p>
+    <p class="text-on-surface-variant text-sm max-w-sm mb-8">Vous recevrez une confirmation par WhatsApp une fois votre commande validée par notre équipe.</p>
+    <div class="glass p-5 rounded-lg w-full max-w-sm mb-8">
+      <div class="flex justify-between items-center mb-3"><span class="text-on-surface-variant text-sm">Total</span><span id="success-total" class="font-extrabold text-primary text-lg"></span></div>
+      <div class="flex justify-between items-center"><span class="text-on-surface-variant text-sm">Livraison estimée</span><span class="font-bold text-sm">45 — 60 min</span></div>
+    </div>
+    <button onclick="navigateTo('shop')" class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg active:scale-95 transition-all">Nouvelle commande</button>
+  </main>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ═══════════════════════════════════════════ -->
+<script>
+// ─── HTML Escape ──────────────────────────────
+function escapeHTML(str) { const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
+
+// ─── Data ─────────────────────────────────────
+const products = [
+  { id: 1, name: "Brochettes de Porc", subtitle: "Savoureuses et grillées", price: 4000, rating: 4.8, category: "braise", image: "./menu de porc/Brochettes.jpeg", desc: "De tendres morceaux de porc finement découpés, marinés aux épices locales et grillés sur des piques.", badge: "fire", orders: 67 },
+  { id: 2, name: "Gras de Porc (Fats)", subtitle: "Fondant et croustillant", price: 3500, rating: 4.5, category: "frit", image: "./menu de porc/Pork Fats.jpeg", desc: "Morceaux de porc plus gras, frits jusqu'à devenir croustillants à l'extérieur et fondants à l'intérieur.", badge: null, orders: 34 },
+  { id: 3, name: "Porc Braisé", subtitle: "Préparation maison", price: 6000, rating: 4.9, category: "braise", image: "./menu de porc/porc braise.jpeg", desc: "Notre fameux porc braisé, assaisonné avec nos épices secrètes et cuit à la perfection.", badge: "fire", orders: 89 },
+  { id: 4, name: "Porc Super Spécial", subtitle: "Assortiment complet", price: 8500, rating: 4.7, category: "saute", image: "./menu de porc/porc super.jpeg", desc: "Une portion super spéciale des meilleurs morceaux de porc. Tendre, juteux et généreux.", badge: "promo", orders: 51 },
+  { id: 5, name: "Méli-Mélo de Porc", subtitle: "Sauté au wok", price: 7000, rating: 4.6, category: "saute", image: "./menu de porc/c.jpeg", desc: "Un mélange de morceaux de porc sautés avec sa sauce d'accompagnement signature.", badge: "new", orders: 28 },
+  { id: 6, name: "Attiéké", subtitle: "Semoule de manioc", price: 1000, rating: 4.6, category: "accompagnements", image: "./accompagnement /L'attiéké (semoule de manioc).jpeg", desc: "Semoule de manioc fraîchement préparée avec mélange tomate, oignon et piment doux.", badge: null, orders: 72 },
+  { id: 7, name: "Alloco", subtitle: "Banane plantain frite", price: 1500, rating: 4.9, category: "accompagnements", image: "./accompagnement /Alloco.jpeg", desc: "Dés de banane plantain mûre, frits dorés. Doux et fondants.", badge: "fire", orders: 95 },
+  { id: 8, name: "Ignames Bouillies", subtitle: "Idéal avec le braisé", price: 1200, rating: 4.5, category: "accompagnements", image: "./accompagnement /Ignames bouillies.jpeg", desc: "Généreux morceaux d'igname locale, bouillis à point.", badge: null, orders: 19 },
+  { id: 9, name: "Riz Blanc", subtitle: "Riz parfumé", price: 1000, rating: 4.5, category: "accompagnements", image: "./accompagnement /riz.jpeg", desc: "Du riz blanc parfumé, préparé à la vapeur.", badge: null, orders: 45 },
+  { id: 10, name: "Bière Locale Glacée", subtitle: "65cl", price: 1500, rating: 4.7, category: "boissons", image: "https://images.unsplash.com/photo-1600728618585-64de85fb4a49?q=80&w=600&auto=format&fit=crop", desc: "L'incontournable pour accompagner votre porc. 65cl bien fraîche.", badge: null, orders: 63 }
+];
+
+const accompagnements = products.filter(p => p.category === 'accompagnements');
+
+// ─── State ────────────────────────────────────
+let cart = [];
+try { let s = localStorage.getItem('chariow_cart'); if (s) cart = JSON.parse(s); } catch(e) {}
+if (!Array.isArray(cart)) cart = [];
+let currentProduct = null;
+let detailQty = 1;
+let selectedAccomp = null;
+let activeCategory = 'all';
+
+// ─── Promo Timer ──────────────────────────────
+function startPromoTimer() {
+  let totalSeconds = 2 * 3600 + 30 * 60;
+  const saved = localStorage.getItem('chariow_promo_end');
+  if (saved) { const r = Math.floor((parseInt(saved) - Date.now()) / 1000); if (r > 0) totalSeconds = r; }
+  else localStorage.setItem('chariow_promo_end', Date.now() + totalSeconds * 1000);
+  const el = document.getElementById('promo-countdown');
+  if (!el) return;
+  setInterval(() => {
+    if (totalSeconds <= 0) { el.textContent = "Expirée!"; return; }
+    totalSeconds--;
+    const h = Math.floor(totalSeconds / 3600), m = Math.floor((totalSeconds % 3600) / 60), s = totalSeconds % 60;
+    el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }, 1000);
+}
+
+// ─── Navigation ───────────────────────────────
+function navigateTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) { target.classList.add('active'); target.classList.remove('page-transition'); void target.offsetWidth; target.classList.add('page-transition'); }
+  window.scrollTo(0, 0);
+  const waFab = document.getElementById('whatsapp-fab');
+  if (waFab) waFab.style.display = (page === 'welcome' || page === 'shop') ? 'flex' : 'none';
+  if (page === 'shop') renderProducts();
+  if (page === 'cart') renderCart();
+  if (page === 'checkout') renderCheckout();
+  updateBadges();
+}
+
+// ─── Products ─────────────────────────────────
+function getBadgeHTML(b) {
+  if (!b) return '';
+  const l = { fire: '🔥 Best-seller', new: '✨ Nouveau', promo: '🎁 Promo' };
+  const c = { fire: 'badge-fire', new: 'badge-new', promo: 'badge-promo' };
+  return `<span class="badge ${c[b]}">${l[b]}</span>`;
+}
+
+function renderProducts() {
+  const grid = document.getElementById('product-grid');
+  if (!grid) return;
+  const search = (document.getElementById('search-input')?.value || '').toLowerCase();
+  const filtered = products.filter(p => {
+    const cat = activeCategory === 'all' || p.category === activeCategory;
+    const s = p.name.toLowerCase().includes(search) || p.subtitle.toLowerCase().includes(search);
+    return cat && s;
+  });
+  grid.innerHTML = filtered.map((p, i) => `
+    <div class="product-card group relative bg-surface-container p-4 rounded-lg cursor-pointer" onclick="openDetail(${p.id})" role="listitem" style="animation: slideUp 0.5s ${i * 0.06}s both;">
+      <div class="relative h-48 md:h-56 mb-5 rounded-lg overflow-hidden -mt-6 shadow-xl">
+        ${getBadgeHTML(p.badge)}
+        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" loading="lazy" decoding="async"/>
+      </div>
+      <div class="px-1">
+        <h4 class="text-lg font-bold font-headline text-on-surface">${escapeHTML(p.name)}</h4>
+        <p class="text-xs text-outline font-medium mb-1">${escapeHTML(p.subtitle)}</p>
+        <div class="flex items-center gap-1 mb-3">
+          <span class="material-symbols-outlined text-surface-tint text-xs" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">star</span>
+          <span class="text-xs font-bold">${p.rating}</span>
+          <span class="text-xs text-outline">• ${p.orders} commandés</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-xl font-extrabold text-primary">${p.price.toLocaleString()} <span class="text-sm">FCFA</span></span>
+          <button onclick="event.stopPropagation(); quickAdd(${p.id})" class="w-11 h-11 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:bg-surface-tint transition-all active:scale-90" aria-label="Ajouter au panier">
+            <span class="material-symbols-outlined text-xl" aria-hidden="true">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts() { renderProducts(); }
+function filterCategory(cat) {
+  activeCategory = cat;
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    const m = btn.dataset.cat === cat;
+    btn.setAttribute('aria-selected', m);
+    btn.className = m ? "cat-btn flex-shrink-0 px-6 py-2.5 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 text-sm" : "cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm";
+  });
+  renderProducts();
+}
+
+function quickAdd(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const ex = cart.find(c => c.id === id && !c.accomp);
+  if (ex) ex.qty += 1; else cart.push({ ...p, qty: 1, accomp: null });
+  updateBadges();
+  showToast(`${p.name} ajouté au panier 🛒`);
+}
+
+// ─── Detail + Accompagnement ──────────────────
+function openDetail(id) {
+  currentProduct = products.find(p => p.id === id);
+  if (!currentProduct) return;
+  detailQty = 1;
+  selectedAccomp = null;
+
+  document.getElementById('detail-image').src = currentProduct.image;
+  document.getElementById('detail-image').alt = currentProduct.name;
+  document.getElementById('detail-name').textContent = currentProduct.name;
+  document.getElementById('detail-rating').textContent = currentProduct.rating;
+  document.getElementById('detail-price').textContent = currentProduct.price.toLocaleString() + ' FCFA';
+  document.getElementById('detail-desc').textContent = currentProduct.desc;
+  document.getElementById('detail-orders-text').textContent = `${currentProduct.orders} commandés aujourd'hui`;
+  document.getElementById('detail-qty').textContent = '1';
+
+  // Afficher les accompagnements seulement pour les plats (pas pour accompagnements et boissons)
+  const accompSection = document.getElementById('accomp-section');
+  const isMainDish = !['accompagnements', 'boissons'].includes(currentProduct.category);
+  accompSection.style.display = isMainDish ? 'block' : 'none';
+
+  if (isMainDish) {
+    const grid = document.getElementById('accomp-grid');
+    grid.innerHTML = accompagnements.map(a => `
+      <div class="accomp-card rounded-xl p-3 bg-surface-container/50 flex flex-col items-center gap-2 border border-white/30" onclick="selectAccomp(${a.id}, this)" id="accomp-${a.id}">
+        <div class="w-full h-20 rounded-lg overflow-hidden">
+          <img src="${escapeHTML(a.image)}" alt="${escapeHTML(a.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+        </div>
+        <span class="font-bold text-sm text-on-surface">${escapeHTML(a.name)}</span>
+        <span class="text-xs text-primary font-bold">+${a.price.toLocaleString()} FCFA</span>
+        <div class="check-icon absolute top-2 right-2 w-5 h-5 bg-surface-tint rounded-full flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-xs">check</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  navigateTo('detail');
+}
+
+function selectAccomp(id, el) {
+  if (selectedAccomp === id) { selectedAccomp = null; el.classList.remove('selected'); return; }
+  selectedAccomp = id;
+  document.querySelectorAll('.accomp-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function changeDetailQty(d) {
+  detailQty = Math.max(1, detailQty + d);
+  document.getElementById('detail-qty').textContent = detailQty;
+}
+
+function goToCheckout() {
+  if (!currentProduct) return;
+  const isMainDish = !['accompagnements', 'boissons'].includes(currentProduct.category);
+
+  // Ajouter le plat au panier
+  const cartKey = currentProduct.id + '-' + (selectedAccomp || 'solo');
+  const existing = cart.find(c => c.cartKey === cartKey);
+  const accompItem = selectedAccomp ? accompagnements.find(a => a.id === selectedAccomp) : null;
+
+  if (existing) {
+    existing.qty += detailQty;
+  } else {
+    cart.push({
+      ...currentProduct,
+      cartKey,
+      qty: detailQty,
+      accomp: accompItem ? { name: accompItem.name, price: accompItem.price, image: accompItem.image } : null,
+      totalPrice: currentProduct.price + (accompItem ? accompItem.price : 0)
+    });
+  }
+
+  updateBadges();
+  showToast(`${currentProduct.name} ajouté! 🛒`);
+  navigateTo('checkout');
+}
+
+// ─── Cart ─────────────────────────────────────
+function renderCart() {
+  const container = document.getElementById('cart-items-container');
+  const emptyEl = document.getElementById('cart-empty');
+  const summaryEl = document.getElementById('cart-summary');
+  if (!container) return;
+  const totalItems = cart.reduce((s, c) => s + c.qty, 0);
+  document.getElementById('cart-count-label').textContent = `(${totalItems} article${totalItems > 1 ? 's' : ''})`;
+
+  if (cart.length === 0) {
+    container.innerHTML = ''; emptyEl.classList.remove('hidden'); emptyEl.classList.add('flex');
+    if (summaryEl) summaryEl.classList.add('hidden'); return;
+  }
+  emptyEl.classList.add('hidden'); emptyEl.classList.remove('flex');
+  if (summaryEl) summaryEl.classList.remove('hidden');
+
+  container.innerHTML = cart.map((item, idx) => `
+    <div class="glass flex items-center p-3 rounded-lg group" role="listitem" style="animation: slideUp 0.4s ${idx * 0.08}s both;">
+      <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-white/20">
+        <img alt="${escapeHTML(item.name)}" class="w-full h-full object-cover" src="${escapeHTML(item.image)}" loading="lazy"/>
+      </div>
+      <div class="ml-3 flex-grow min-w-0">
+        <div class="flex justify-between items-start">
+          <div class="min-w-0">
+            <h3 class="text-base font-bold text-on-surface truncate">${escapeHTML(item.name)}</h3>
+            ${item.accomp ? `<p class="text-xs text-surface-tint font-semibold">+ ${escapeHTML(item.accomp.name)}</p>` : ''}
+          </div>
+          <button onclick="removeFromCart(${idx})" class="text-error hover:scale-110 transition-transform p-1 flex-shrink-0" aria-label="Supprimer">
+            <span class="material-symbols-outlined text-lg" aria-hidden="true">delete</span>
+          </button>
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <span class="text-base font-extrabold text-primary">${((item.totalPrice || item.price) * item.qty).toLocaleString()} FCFA</span>
+          <div class="flex items-center bg-surface-container rounded-full p-0.5 border border-white/20">
+            <button onclick="changeCartQty(${idx}, -1)" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-surface-bright"><span class="material-symbols-outlined text-sm">remove</span></button>
+            <span class="px-2 font-bold text-sm">${item.qty}</span>
+            <button onclick="changeCartQty(${idx}, 1)" class="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white"><span class="material-symbols-outlined text-sm">add</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  updateCartTotals();
+}
+
+function changeCartQty(idx, d) { cart[idx].qty += d; if (cart[idx].qty <= 0) cart.splice(idx, 1); renderCart(); updateBadges(); }
+function removeFromCart(idx) { const n = cart[idx].name; cart.splice(idx, 1); renderCart(); updateBadges(); showToast(`${n} retiré`); }
+function updateCartTotals() {
+  const sub = cart.reduce((s, c) => s + (c.totalPrice || c.price) * c.qty, 0);
+  document.getElementById('cart-subtotal').textContent = sub.toLocaleString() + ' FCFA';
+  document.getElementById('cart-total').textContent = (sub + 500).toLocaleString() + ' FCFA';
+}
+
+// ─── Checkout ─────────────────────────────────
+function renderCheckout() {
+  const container = document.getElementById('checkout-items');
+  if (!container) return;
+  container.innerHTML = cart.map(item => `
+    <div class="flex items-center justify-between pb-3 border-b border-white/20">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden"><img alt="${escapeHTML(item.name)}" class="w-full h-full object-cover" src="${escapeHTML(item.image)}" loading="lazy"/></div>
+        <div>
+          <p class="font-bold text-sm">${escapeHTML(item.name)} × ${item.qty}</p>
+          ${item.accomp ? `<p class="text-xs text-surface-tint">+ ${escapeHTML(item.accomp.name)}</p>` : ''}
+        </div>
+      </div>
+      <p class="font-bold text-sm text-tertiary">${((item.totalPrice || item.price) * item.qty).toLocaleString()} FCFA</p>
+    </div>
+  `).join('');
+  const sub = cart.reduce((s, c) => s + (c.totalPrice || c.price) * c.qty, 0);
+  document.getElementById('checkout-total').textContent = (sub + 500).toLocaleString() + ' FCFA';
+}
+
+// ─── Place Order → Save locally (admin panel) ─
+function placeOrder() {
+  if (cart.length === 0) { showToast('Votre panier est vide!'); return; }
+  const name = document.getElementById('cust-name')?.value?.trim();
+  const phone = document.getElementById('cust-phone')?.value?.trim();
+  const quartier = document.getElementById('cust-quartier')?.value?.trim();
+  const details = document.getElementById('cust-details')?.value?.trim() || '';
+
+  if (!name) { showToast('Veuillez entrer votre nom'); document.getElementById('cust-name')?.focus(); return; }
+  if (!phone || phone.length < 8) { showToast('Veuillez entrer un numéro valide'); document.getElementById('cust-phone')?.focus(); return; }
+  if (!quartier) { showToast('Veuillez indiquer votre quartier'); document.getElementById('cust-quartier')?.focus(); return; }
+
+  const paymentEl = document.querySelector('input[name="payment"]:checked');
+  const paymentLabels = { wave: 'Wave', orange_money: 'Orange Money', cash: 'Espèces' };
+  const payment = paymentEl ? paymentLabels[paymentEl.value] || paymentEl.value : 'Non précisé';
+
+  const subtotal = cart.reduce((s, c) => s + (c.totalPrice || c.price) * c.qty, 0);
+  const total = subtotal + 500;
+
+  // Générer un ID de commande
+  const orderId = 'CMD-' + Date.now().toString(36).toUpperCase();
+
+  // Construire l'objet commande
+  const order = {
+    id: orderId,
+    date: new Date().toISOString(),
+    status: 'en_attente', // en_attente → validée → livrée
+    client: { name, phone, quartier, details },
+    payment,
+    items: cart.map(item => ({
+      name: item.name,
+      image: item.image,
+      price: item.price,
+      totalPrice: item.totalPrice || item.price,
+      qty: item.qty,
+      accomp: item.accomp || null
+    })),
+    subtotal,
+    serviceFee: 500,
+    total
+  };
+
+  // Sauvegarder dans localStorage (accessible par admin.html)
+  let orders = [];
+  try { orders = JSON.parse(localStorage.getItem('chariow_orders') || '[]'); } catch(e) {}
+  orders.unshift(order);
+  localStorage.setItem('chariow_orders', JSON.stringify(orders));
+
+  // Afficher confirmation
+  document.getElementById('success-order-id').textContent = orderId;
+  document.getElementById('success-total').textContent = total.toLocaleString() + ' FCFA';
+
+  // Vider le panier
+  cart = [];
+  localStorage.removeItem('chariow_cart');
+
+  showToast('Commande enregistrée! ✅');
+  navigateTo('success');
+}
+
+// ─── Badges ───────────────────────────────────
+function updateBadges() {
+  localStorage.setItem('chariow_cart', JSON.stringify(cart));
+  const total = cart.reduce((s, c) => s + c.qty, 0);
+  ['cart-badge-shop', 'cart-badge-nav', 'cart-badge-detail'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = total; el.classList.toggle('hidden', total === 0); }
+  });
+}
+
+// ─── Toast ────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast'); if (!t) return;
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ─── Init ─────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => { const s = document.getElementById('splashscreen'); if (s) { s.classList.add('hide'); setTimeout(() => s.remove(), 600); } }, 2200);
+  updateBadges();
+  navigateTo('welcome');
+  startPromoTimer();
+});
+</script>
+</body>
+</html>

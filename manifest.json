@@ -1,0 +1,19 @@
+{
+  "name": "Le Porc de Chez Nous — Restaurant de Porc Grillé",
+  "short_name": "Le Porc",
+  "description": "Commandez le meilleur porc grillé, braisé et frit d'Abidjan. Livraison rapide.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#5f1600",
+  "orientation": "portrait",
+  "lang": "fr",
+  "categories": ["food", "shopping"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍖</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

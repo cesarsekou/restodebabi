@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - The Sensory Brew</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#2b1613",
+                        "surface-container-low": "#fbf3e4",
+                        "on-surface": "#1e1b13",
+                        "outline": "#827470",
+                        "on-secondary": "#ffffff",
+                        "primary": "#5f1600",
+                        "inverse-primary": "#ffb59f",
+                        "tertiary": "#47281e",
+                        "outline-variant": "#d4c3be",
+                        "secondary-fixed": "#ffdad4",
+                        "error-container": "#ffdad6",
+                        "secondary": "#745853",
+                        "on-primary-fixed-variant": "#852300",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#e1d9cb",
+                        "on-tertiary-container": "#daaa9b",
+                        "on-secondary-container": "#795c57",
+                        "surface-container": "#f5edde",
+                        "secondary-fixed-dim": "#e3beb8",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-bright": "#fff8ef",
+                        "on-primary-container": "#ff9b7d",
+                        "primary-container": "#862300",
+                        "on-tertiary-fixed-variant": "#613e33",
+                        "surface": "#fff8ef",
+                        "inverse-surface": "#343026",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb59f",
+                        "tertiary-container": "#613e33",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#edbbac",
+                        "on-tertiary-fixed": "#2f140b",
+                        "on-background": "#1e1b13",
+                        "on-secondary-fixed-variant": "#5b403c",
+                        "secondary-container": "#fed7d0",
+                        "surface-tint": "#ac3509",
+                        "inverse-on-surface": "#f8f0e1",
+                        "surface-variant": "#e9e2d3",
+                        "on-surface-variant": "#504441",
+                        "on-primary-fixed": "#3a0a00",
+                        "background": "#fff8ef",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e9e2d3",
+                        "surface-container-high": "#efe7d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 248, 239, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff8ef]/30 dark:bg-[#1e1b13]/30 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#f5edde]/50 transition-colors">
+<span class="material-symbols-outlined text-[#5f1600]">arrow_back</span>
+</button>
+<h1 class="text-2xl font-extrabold text-[#5f1600] tracking-tight font-headline">Checkout</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20">
+<img alt="User Profile" data-alt="Portrait of a sophisticated young professional enjoying a high-end lifestyle, warm soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBERaH-zriSgn4QS0RcQb8GNy9Pf94xh0E94TdiaolKJkVT2oBjC2QLdkpVDGTWo77-usuKxLpJaCiGq3NuevqTF1l5tNTqsBFBgKhk9I6RwVdHQWoooG8OyZJgzENk3lPnGPe3T02b5CwVetLTYbluTdA5Iz0Flu6abtETJvzUVRPyE_hzFzJy884T88ajespMqLHmlJ6XO0QINM_iL0bXyE5GgdYMu7j8KLRwDF32typ0O7WMTQjpIku5xirmFjPNqnQmFpS61PI"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-8">
+<div class="relative overflow-hidden rounded-lg p-6 flex flex-col md:flex-row items-center gap-6 bg-primary-container text-white">
+<div class="absolute top-0 right-0 w-64 h-64 bg-surface-tint/20 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="z-10 flex-1">
+<h2 class="font-headline font-bold text-2xl mb-2">Finalizing your brew</h2>
+<p class="text-white/80 text-sm">Review your selection of artisanal beans and brewing equipment before we start the roast.</p>
+</div>
+<div class="z-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+</div>
+</div>
+<section class="space-y-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="font-headline font-bold text-xl text-tertiary">Delivery Address</h3>
+<button class="text-surface-tint font-bold text-sm uppercase tracking-wider">Edit</button>
+</div>
+<div class="glass-card p-6 rounded-lg flex items-start gap-4">
+<div class="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">The Loft Studio</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">422 Roastery Lane, Artisan District<br/>Manhattan, NY 10012</p>
+<p class="text-xs text-on-surface-variant/60 mt-2 italic">Leave at the front concierge</p>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h3 class="font-headline font-bold text-xl text-tertiary px-2">Payment Method</h3>
+<div class="grid grid-cols-1 gap-3">
+<label class="relative glass-card p-5 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+<input checked="" class="hidden" name="payment" type="radio"/>
+<div class="w-10 h-10 bg-white/80 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">credit_card</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Credit Card</p>
+<p class="text-xs text-on-surface-variant">•••• •••• •••• 8829</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center p-0.5">
+<div class="w-full h-full rounded-full bg-surface-tint scale-100 transition-transform"></div>
+</div>
+</label>
+<label class="relative glass-card p-5 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+<input class="hidden" name="payment" type="radio"/>
+<div class="w-10 h-10 bg-white/80 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">ios</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Apple Pay</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center p-0.5">
+<div class="w-full h-full rounded-full bg-surface-tint scale-0 transition-transform"></div>
+</div>
+</label>
+<label class="relative glass-card p-5 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
+<input class="hidden" name="payment" type="radio"/>
+<div class="w-10 h-10 bg-white/80 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">payments</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Cash on Delivery</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center p-0.5">
+<div class="w-full h-full rounded-full bg-surface-tint scale-0 transition-transform"></div>
+</div>
+</label>
+</div>
+</section>
+<section class="space-y-4">
+<h3 class="font-headline font-bold text-xl text-tertiary px-2">Order Summary</h3>
+<div class="glass-card p-6 rounded-lg space-y-4">
+<div class="flex items-center justify-between pb-4 border-b border-white/20">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden">
+<img alt="Coffee beans" class="w-full h-full object-cover" data-alt="Close-up of premium dark roasted coffee beans in a glass jar with soft morning light and shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTx5smxBPAdOrSaWRYCVUvZRdXOrJaPrFC6Tm-t-Xx7qKaHKTrW5bVToq3P5mpThYkvv4f-EX4pyJ4t_SHlZEn_ftBgsRUIFgPzRdO0jIOY7TxH7W8_hfLlkpzUC2EhF_KsNBjvhWAhlZ0LundApMuN5ygUsuFuOovwVXuwThG8-KUEx9AQv_gYEsHvhv2z1xYin2QEfGMohS4e8O4Fvjxkna7CjFJfQamdwLgYbVkA8W72HgPe7hCfP5w-_m4i_qAzb2SxnlchNw"/>
+</div>
+<div>
+<p class="font-bold">Ethiopian Yirgacheffe</p>
+<p class="text-xs text-on-surface-variant">250g • Whole Bean</p>
+</div>
+</div>
+<p class="font-bold text-tertiary">$24.00</p>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface font-medium">$24.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Delivery Fee</span>
+<span class="text-on-surface font-medium">$4.50</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Eco-Packaging</span>
+<span class="text-on-surface font-medium">$1.00</span>
+</div>
+<div class="flex justify-between pt-4 text-xl font-headline font-extrabold text-primary border-t border-white/30">
+<span>Total</span>
+<span>$29.50</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-0 left-0 w-full z-50 p-6 bg-white/10 dark:bg-[#1e1b13]/10 backdrop-blur-[20px] shadow-[0_-8px_48px_rgba(30,27,19,0.08)] border-t border-white/20 rounded-t-[2rem]">
+<button class="w-full py-5 bg-primary text-white rounded-full font-headline font-bold text-lg shadow-lg active:scale-95 transition-all duration-150 flex items-center justify-center gap-2">
+            Place Order
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] font-semibold text-on-surface-variant/60 mt-4 font-body uppercase tracking-[0.1em]">By placing an order, you agree to our Terms of Service</p>
+</div>
+</body></html>

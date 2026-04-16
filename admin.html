@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Porc de Chez Nous Admin — Gestion des Commandes</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #5f1600; --primary-container: #862300; --surface-tint: #ac3509;
+    --surface: #fff8ef; --surface-container: #f5edde; --surface-container-high: #efe7d9;
+    --on-surface: #1e1b13; --on-surface-variant: #504441; --outline: #827470;
+    --success: #2e7d32; --success-light: #e8f5e9; --warning: #f57c00; --warning-light: #fff3e0;
+    --error: #ba1a1a; --error-light: #fde7e7;
+  }
+  body { font-family: 'Manrope', sans-serif; background: var(--surface-container); color: var(--on-surface); min-height: 100vh; }
+  h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+  /* Login Screen */
+  .login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #5f1600 0%, #862300 40%, #ac3509 100%); padding: 20px; }
+  .login-card { background: white; border-radius: 24px; padding: 48px 36px; max-width: 400px; width: 100%; box-shadow: 0 32px 64px rgba(0,0,0,0.15); text-align: center; }
+  .login-card h1 { color: var(--primary); font-size: 28px; margin-bottom: 8px; }
+  .login-card p { color: var(--on-surface-variant); font-size: 14px; margin-bottom: 32px; }
+  .login-card input { width: 100%; padding: 14px 16px; border: 2px solid var(--surface-container-high); border-radius: 12px; font-size: 15px; font-family: inherit; margin-bottom: 16px; transition: border-color 0.2s; }
+  .login-card input:focus { border-color: var(--surface-tint); outline: none; }
+  .login-card button { width: 100%; padding: 16px; background: var(--surface-tint); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s, opacity 0.2s; }
+  .login-card button:hover { opacity: 0.9; }
+  .login-card button:active { transform: scale(0.98); }
+  .login-error { color: var(--error); font-size: 13px; margin-top: 6px; display: none; }
+
+  /* Admin Dashboard */
+  .admin-dashboard { display: none; }
+  .admin-dashboard.active { display: block; }
+  .admin-header { background: white; padding: 16px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; }
+  .admin-header h1 { font-size: 20px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+  .admin-header h1 .material-symbols-outlined { font-size: 24px; font-variation-settings: 'FILL' 1; color: var(--surface-tint); }
+  .btn-logout { padding: 8px 20px; background: transparent; border: 2px solid var(--primary); color: var(--primary); border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+  .btn-logout:hover { background: var(--primary); color: white; }
+
+  /* Stats Bar */
+  .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding: 24px; max-width: 1200px; margin: 0 auto; }
+  .stat-card { background: white; border-radius: 16px; padding: 20px 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+  .stat-card .label { font-size: 12px; color: var(--on-surface-variant); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .stat-card .value { font-size: 28px; font-weight: 800; font-family: 'Plus Jakarta Sans'; }
+  .stat-card .value.primary { color: var(--primary); }
+  .stat-card .value.success { color: var(--success); }
+  .stat-card .value.warning { color: var(--warning); }
+
+  /* Filter Tabs */
+  .filter-tabs { display: flex; gap: 8px; padding: 0 24px; max-width: 1200px; margin: 0 auto 16px; overflow-x: auto; }
+  .filter-tab { padding: 10px 20px; border-radius: 99px; border: none; font-size: 13px; font-weight: 700; cursor: pointer; background: white; color: var(--on-surface-variant); transition: all 0.2s; white-space: nowrap; }
+  .filter-tab.active { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(95,22,0,0.3); }
+
+  /* Order Cards */
+  .orders-container { padding: 0 24px 40px; max-width: 1200px; margin: 0 auto; }
+  .order-card { background: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.3s; position: relative; overflow: hidden; }
+  .order-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .order-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .order-card.status-en_attente::before { background: var(--warning); }
+  .order-card.status-validee::before { background: var(--success); }
+  .order-card.status-livree::before { background: var(--on-surface-variant); }
+
+  .order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .order-id { font-weight: 800; font-family: 'Plus Jakarta Sans'; font-size: 16px; color: var(--primary); }
+  .order-date { font-size: 12px; color: var(--on-surface-variant); }
+  .status-badge { padding: 4px 14px; border-radius: 99px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+  .status-badge.en_attente { background: var(--warning-light); color: var(--warning); }
+  .status-badge.validee { background: var(--success-light); color: var(--success); }
+  .status-badge.livree { background: var(--surface-container-high); color: var(--on-surface-variant); }
+
+  .client-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; padding: 14px; background: var(--surface-container); border-radius: 12px; }
+  .client-info .field { font-size: 13px; }
+  .client-info .field .label { font-size: 10px; font-weight: 700; color: var(--on-surface-variant); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .client-info .field .value { font-weight: 600; color: var(--on-surface); }
+
+  .order-items { margin-bottom: 16px; }
+  .order-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--surface-container); }
+  .order-item:last-child { border-bottom: none; }
+  .order-item img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+  .order-item .item-details { flex: 1; }
+  .order-item .item-name { font-weight: 700; font-size: 14px; }
+  .order-item .item-accomp { font-size: 12px; color: var(--surface-tint); font-weight: 600; }
+  .order-item .item-price { font-weight: 800; color: var(--primary); font-size: 14px; }
+
+  .order-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 2px solid var(--surface-container); flex-wrap: wrap; gap: 12px; }
+  .order-total { font-weight: 800; font-family: 'Plus Jakarta Sans'; font-size: 20px; color: var(--primary); }
+  .order-payment { font-size: 12px; color: var(--on-surface-variant); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+  .order-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn-action { padding: 10px 20px; border: none; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
+  .btn-action:active { transform: scale(0.97); }
+  .btn-validate { background: var(--success); color: white; }
+  .btn-validate:hover { background: #256b28; }
+  .btn-deliver { background: var(--primary); color: white; }
+  .btn-deliver:hover { background: var(--primary-container); }
+  .btn-delete { background: var(--error-light); color: var(--error); }
+  .btn-delete:hover { background: var(--error); color: white; }
+
+  .empty-state { text-align: center; padding: 80px 20px; color: var(--on-surface-variant); }
+  .empty-state .material-symbols-outlined { font-size: 64px; opacity: 0.3; margin-bottom: 16px; }
+
+  /* Confirmation dialog */
+  .dialog-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .dialog-overlay.show { display: flex; }
+  .dialog-box { background: white; border-radius: 20px; padding: 32px; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 24px 48px rgba(0,0,0,0.2); }
+  .dialog-box h3 { font-size: 20px; margin-bottom: 10px; }
+  .dialog-box p { color: var(--on-surface-variant); font-size: 14px; margin-bottom: 24px; }
+  .dialog-buttons { display: flex; gap: 12px; }
+  .dialog-buttons button { flex: 1; padding: 12px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 14px; border: none; }
+  .dialog-cancel { background: var(--surface-container); color: var(--on-surface); }
+  .dialog-confirm { background: var(--success); color: white; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 16px; gap: 8px; }
+    .stat-card { padding: 14px 16px; }
+    .stat-card .value { font-size: 22px; }
+    .order-card { padding: 16px; }
+    .filter-tabs { padding: 0 16px; }
+    .orders-container { padding: 0 16px 40px; }
+    .admin-header { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ LOGIN ═══════════════════ -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div style="margin-bottom: 20px;">
+      <span class="material-symbols-outlined" style="font-size: 48px; color: #ac3509; font-variation-settings: 'FILL' 1;">restaurant</span>
+    </div>
+    <h1>Le Porc de Chez Nous Admin</h1>
+    <p>Connectez-vous pour gérer vos commandes</p>
+    <form onsubmit="attemptLogin(event)">
+      <input type="text" id="login-user" placeholder="Identifiant" autocomplete="username" required/>
+      <input type="password" id="login-pass" placeholder="Mot de passe" autocomplete="current-password" required/>
+      <p class="login-error" id="login-error">Identifiant ou mot de passe incorrect</p>
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════════════════ DASHBOARD ═══════════════════ -->
+<div id="admin-dashboard" class="admin-dashboard">
+  <!-- Header -->
+  <header class="admin-header">
+    <h1><span class="material-symbols-outlined">restaurant</span> Le Porc de Chez Nous Admin</h1>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span id="admin-username" style="font-size: 13px; font-weight: 600; color: var(--on-surface-variant);"></span>
+      <button class="btn-logout" onclick="logout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="label">Total commandes</div>
+      <div class="value primary" id="stat-total">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">En attente</div>
+      <div class="value warning" id="stat-pending">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Validées</div>
+      <div class="value success" id="stat-validated">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Chiffre du jour</div>
+      <div class="value primary" id="stat-revenue">0 FCFA</div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterOrders('all', this)">Toutes</button>
+    <button class="filter-tab" onclick="filterOrders('en_attente', this)">⏳ En attente</button>
+    <button class="filter-tab" onclick="filterOrders('validee', this)">✅ Validées</button>
+    <button class="filter-tab" onclick="filterOrders('livree', this)">📦 Livrées</button>
+  </div>
+
+  <!-- Orders -->
+  <div class="orders-container" id="orders-container"></div>
+</div>
+
+<!-- ═══════════════════ CONFIRM DIALOG ═══════════════════ -->
+<div class="dialog-overlay" id="dialog-overlay">
+  <div class="dialog-box">
+    <h3 id="dialog-title">Confirmer</h3>
+    <p id="dialog-message">Voulez-vous valider cette commande?</p>
+    <div class="dialog-buttons">
+      <button class="dialog-cancel" onclick="closeDialog()">Annuler</button>
+      <button class="dialog-confirm" id="dialog-confirm-btn" onclick="confirmAction()">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Admin Credentials ──────────────────────────
+// ⚠️ IMPORTANT: Changez ces identifiants en production!
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'chariow2025';
+
+let currentFilter = 'all';
+let pendingAction = null;
+
+// ─── Auth ──────────────────────────────────────
+function attemptLogin(e) {
+  e.preventDefault();
+  const user = document.getElementById('login-user').value.trim();
+  const pass = document.getElementById('login-pass').value;
+  if (user === ADMIN_USER && pass === ADMIN_PASS) {
+    sessionStorage.setItem('chariow_admin', 'true');
+    sessionStorage.setItem('chariow_admin_user', user);
+    showDashboard();
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+    document.getElementById('login-pass').value = '';
+  }
+}
+
+function showDashboard() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('admin-dashboard').classList.add('active');
+  document.getElementById('admin-username').textContent = sessionStorage.getItem('chariow_admin_user') || 'Admin';
+  loadOrders();
+}
+
+function logout() {
+  sessionStorage.removeItem('chariow_admin');
+  sessionStorage.removeItem('chariow_admin_user');
+  location.reload();
+}
+
+// Check session on load
+if (sessionStorage.getItem('chariow_admin') === 'true') showDashboard();
+
+// ─── Load Orders ──────────────────────────────
+function getOrders() {
+  try { return JSON.parse(localStorage.getItem('chariow_orders') || '[]'); }
+  catch(e) { return []; }
+}
+
+function saveOrders(orders) {
+  localStorage.setItem('chariow_orders', JSON.stringify(orders));
+}
+
+function loadOrders() {
+  const orders = getOrders();
+  updateStats(orders);
+  renderOrders(orders);
+}
+
+function updateStats(orders) {
+  const today = new Date().toDateString();
+  const todayOrders = orders.filter(o => new Date(o.date).toDateString() === today);
+
+  document.getElementById('stat-total').textContent = orders.length;
+  document.getElementById('stat-pending').textContent = orders.filter(o => o.status === 'en_attente').length;
+  document.getElementById('stat-validated').textContent = orders.filter(o => o.status === 'validee').length;
+
+  const todayRevenue = todayOrders.filter(o => o.status !== 'en_attente').reduce((s, o) => s + o.total, 0);
+  document.getElementById('stat-revenue').textContent = todayRevenue.toLocaleString() + ' FCFA';
+}
+
+function renderOrders(orders) {
+  const container = document.getElementById('orders-container');
+  const filtered = currentFilter === 'all' ? orders : orders.filter(o => o.status === currentFilter);
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <span class="material-symbols-outlined">inbox</span>
+        <h3>Aucune commande</h3>
+        <p>Les commandes de vos clients apparaîtront ici.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = filtered.map(order => {
+    const date = new Date(order.date);
+    const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+    const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    const statusLabels = { en_attente: '⏳ En attente', validee: '✅ Validée', livree: '📦 Livrée' };
+
+    return `
+    <div class="order-card status-${order.status}">
+      <div class="order-header">
+        <div>
+          <div class="order-id">${esc(order.id)}</div>
+          <div class="order-date">${dateStr} à ${timeStr}</div>
+        </div>
+        <span class="status-badge ${order.status}">${statusLabels[order.status] || order.status}</span>
+      </div>
+
+      <div class="client-info">
+        <div class="field"><div class="label">Client</div><div class="value">${esc(order.client.name)}</div></div>
+        <div class="field"><div class="label">Téléphone</div><div class="value"><a href="tel:${esc(order.client.phone)}" style="color: var(--surface-tint); text-decoration: none;">${esc(order.client.phone)}</a></div></div>
+        <div class="field"><div class="label">Quartier</div><div class="value">${esc(order.client.quartier)}</div></div>
+        ${order.client.details ? `<div class="field"><div class="label">Précisions</div><div class="value">${esc(order.client.details)}</div></div>` : ''}
+      </div>
+
+      <div class="order-items">
+        ${order.items.map(item => `
+          <div class="order-item">
+            <img src="${esc(item.image)}" alt="${esc(item.name)}" loading="lazy"/>
+            <div class="item-details">
+              <div class="item-name">${esc(item.name)} × ${item.qty}</div>
+              ${item.accomp ? `<div class="item-accomp">+ ${esc(item.accomp.name)}</div>` : ''}
+            </div>
+            <div class="item-price">${((item.totalPrice || item.price) * item.qty).toLocaleString()} F</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="order-footer">
+        <div>
+          <div class="order-payment"><span class="material-symbols-outlined" style="font-size: 16px;">credit_card</span> ${esc(order.payment)}</div>
+          <div class="order-total">${order.total.toLocaleString()} FCFA</div>
+        </div>
+        <div class="order-actions">
+          ${order.status === 'en_attente' ? `<button class="btn-action btn-validate" onclick="confirmValidate('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">check</span> Valider</button>` : ''}
+          ${order.status === 'validee' ? `<button class="btn-action btn-deliver" onclick="confirmDeliver('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">local_shipping</span> Livrée</button>` : ''}
+          <button class="btn-action btn-delete" onclick="confirmDelete('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">delete</span></button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterOrders(status, btn) {
+  currentFilter = status;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  loadOrders();
+}
+
+// ─── Actions ──────────────────────────────────
+function confirmValidate(orderId) {
+  pendingAction = { type: 'validate', orderId };
+  document.getElementById('dialog-title').textContent = '✅ Valider la commande';
+  document.getElementById('dialog-message').textContent = `Valider ${orderId} ? Un message WhatsApp sera préparé pour le client.`;
+  document.getElementById('dialog-confirm-btn').textContent = 'Valider';
+  document.getElementById('dialog-confirm-btn').style.background = 'var(--success)';
+  document.getElementById('dialog-overlay').classList.add('show');
+}
+
+function confirmDeliver(orderId) {
+  pendingAction = { type: 'deliver', orderId };
+  document.getElementById('dialog-title').textContent = '📦 Marquer comme livrée';
+  document.getElementById('dialog-message').textContent = `Confirmer la livraison de ${orderId} ?`;
+  document.getElementById('dialog-confirm-btn').textContent = 'Confirmer';
+  document.getElementById('dialog-confirm-btn').style.background = 'var(--primary)';
+  document.getElementById('dialog-overlay').classList.add('show');
+}
+
+function confirmDelete(orderId) {
+  pendingAction = { type: 'delete', orderId };
+  document.getElementById('dialog-title').textContent = '🗑️ Supprimer la commande';
+  document.getElementById('dialog-message').textContent = `Supprimer définitivement ${orderId} ? Cette action est irréversible.`;
+  document.getElementById('dialog-confirm-btn').textContent = 'Supprimer';
+  document.getElementById('dialog-confirm-btn').style.background = 'var(--error)';
+  document.getElementById('dialog-overlay').classList.add('show');
+}
+
+function closeDialog() {
+  document.getElementById('dialog-overlay').classList.remove('show');
+  pendingAction = null;
+}
+
+function confirmAction() {
+  if (!pendingAction) return;
+  const orders = getOrders();
+  const order = orders.find(o => o.id === pendingAction.orderId);
+
+  if (pendingAction.type === 'validate' && order) {
+    order.status = 'validee';
+    saveOrders(orders);
+
+    // Envoyer WhatsApp au client
+    const itemsList = order.items.map(i =>
+      `• ${i.name} x${i.qty}${i.accomp ? ' + ' + i.accomp.name : ''}`
+    ).join('\n');
+
+    const msg = `✅ *LE PORC DE CHEZ NOUS — Commande Validée*\n\nBonjour ${order.client.name} !\n\nVotre commande *${order.id}* a été validée.\n\n📋 *Détails :*\n${itemsList}\n\n💰 *Total : ${order.total.toLocaleString()} FCFA*\n💳 Paiement : ${order.payment}\n\n🚗 Livraison estimée : 45-60 min\n📍 ${order.client.quartier}\n\nMerci pour votre confiance ! 🍖`;
+
+    // Ouvrir WhatsApp avec le message
+    const phone = order.client.phone.replace(/\s/g, '').replace(/^0/, '225');
+    const waURL = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(waURL, '_blank');
+
+  } else if (pendingAction.type === 'deliver' && order) {
+    order.status = 'livree';
+    saveOrders(orders);
+
+  } else if (pendingAction.type === 'delete') {
+    const idx = orders.findIndex(o => o.id === pendingAction.orderId);
+    if (idx >= 0) orders.splice(idx, 1);
+    saveOrders(orders);
+  }
+
+  closeDialog();
+  loadOrders();
+}
+
+// ─── Helpers ──────────────────────────────────
+function esc(str) { const d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+
+// ─── Auto-refresh every 10 seconds ───────────
+setInterval(loadOrders, 10000);
+</script>
+</body>
+</html>
