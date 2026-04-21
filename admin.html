@@ -64,6 +64,7 @@
   .order-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
   .order-card.status-en_attente::before { background: var(--warning); }
   .order-card.status-validee::before { background: var(--success); }
+  .order-card.status-en_livraison::before { background: #1565c0; }
   .order-card.status-livree::before { background: var(--on-surface-variant); }
 
   .order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
@@ -72,6 +73,7 @@
   .status-badge { padding: 4px 14px; border-radius: 99px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
   .status-badge.en_attente { background: var(--warning-light); color: var(--warning); }
   .status-badge.validee { background: var(--success-light); color: var(--success); }
+  .status-badge.en_livraison { background: #e3f2fd; color: #1565c0; }
   .status-badge.livree { background: var(--surface-container-high); color: var(--on-surface-variant); }
 
   .client-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; padding: 14px; background: var(--surface-container); border-radius: 12px; }
@@ -97,6 +99,8 @@
   .btn-action:active { transform: scale(0.97); }
   .btn-validate { background: var(--success); color: white; }
   .btn-validate:hover { background: #256b28; }
+  .btn-ship { background: #1565c0; color: white; }
+  .btn-ship:hover { background: #0d47a1; }
   .btn-deliver { background: var(--primary); color: white; }
   .btn-deliver:hover { background: var(--primary-container); }
   .btn-delete { background: var(--error-light); color: var(--error); }
@@ -169,8 +173,12 @@
       <div class="value warning" id="stat-pending">0</div>
     </div>
     <div class="stat-card">
-      <div class="label">Validées</div>
+      <div class="label">En préparation</div>
       <div class="value success" id="stat-validated">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">En livraison</div>
+      <div class="value" id="stat-shipping" style="color:#1565c0;">0</div>
     </div>
     <div class="stat-card">
       <div class="label">Chiffre du jour</div>
@@ -182,8 +190,9 @@
   <div class="filter-tabs">
     <button class="filter-tab active" onclick="filterOrders('all', this)">Toutes</button>
     <button class="filter-tab" onclick="filterOrders('en_attente', this)">⏳ En attente</button>
-    <button class="filter-tab" onclick="filterOrders('validee', this)">✅ Validées</button>
-    <button class="filter-tab" onclick="filterOrders('livree', this)">📦 Livrées</button>
+    <button class="filter-tab" onclick="filterOrders('validee', this)">🍳 En préparation</button>
+    <button class="filter-tab" onclick="filterOrders('en_livraison', this)">🛵 En livraison</button>
+    <button class="filter-tab" onclick="filterOrders('livree', this)">✅ Livrées</button>
   </div>
 
   <!-- Orders -->
@@ -202,7 +211,17 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.42.0/dist/umd/supabase.js"></script>
 <script>
+const supabaseUrl = 'https://ddrjiaxonvfsnzpdkyfp.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkcmppYXhvbnZmc256cGRreWZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NzAzNTcsImV4cCI6MjA5MjM0NjM1N30.dpAryd0ybBWcDy-PQVhJkqRQuTiLk-_a4i1xqg-NXBo';
+let supabase;
+try {
+  supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+} catch (err) {
+  console.error("Supabase Init Error:", err);
+}
+
 // ─── Admin Credentials ──────────────────────────
 // ⚠️ IMPORTANT: Changez ces identifiants en production!
 const ADMIN_USER = 'admin';
@@ -214,15 +233,20 @@ let pendingAction = null;
 // ─── Auth ──────────────────────────────────────
 function attemptLogin(e) {
   e.preventDefault();
-  const user = document.getElementById('login-user').value.trim();
-  const pass = document.getElementById('login-pass').value;
-  if (user === ADMIN_USER && pass === ADMIN_PASS) {
-    sessionStorage.setItem('chariow_admin', 'true');
-    sessionStorage.setItem('chariow_admin_user', user);
-    showDashboard();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('login-pass').value = '';
+  try {
+    const user = document.getElementById('login-user').value.trim().toLowerCase();
+    const pass = document.getElementById('login-pass').value;
+    if (user === ADMIN_USER && pass === ADMIN_PASS) {
+      sessionStorage.setItem('chariow_admin', 'true');
+      sessionStorage.setItem('chariow_admin_user', user);
+      showDashboard();
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+      document.getElementById('login-pass').value = '';
+    }
+  } catch (err) {
+    console.error("Login Error:", err);
+    alert("Erreur technique lors de la connexion : " + err.message);
   }
 }
 
@@ -243,19 +267,15 @@ function logout() {
 if (sessionStorage.getItem('chariow_admin') === 'true') showDashboard();
 
 // ─── Load Orders ──────────────────────────────
-function getOrders() {
-  try { return JSON.parse(localStorage.getItem('chariow_orders') || '[]'); }
-  catch(e) { return []; }
-}
-
-function saveOrders(orders) {
-  localStorage.setItem('chariow_orders', JSON.stringify(orders));
-}
-
-function loadOrders() {
-  const orders = getOrders();
-  updateStats(orders);
-  renderOrders(orders);
+async function loadOrders() {
+  const { data: orders, error } = await supabase.from('orders').select('*').order('created_at', { ascending: false });
+  if (error) {
+    console.error('Erreur lors du chargement des commandes:', error);
+    return;
+  }
+  const mappedOrders = orders.map(o => ({...o, date: o.created_at, serviceFee: o.service_fee}));
+  updateStats(mappedOrders);
+  renderOrders(mappedOrders);
 }
 
 function updateStats(orders) {
@@ -265,6 +285,7 @@ function updateStats(orders) {
   document.getElementById('stat-total').textContent = orders.length;
   document.getElementById('stat-pending').textContent = orders.filter(o => o.status === 'en_attente').length;
   document.getElementById('stat-validated').textContent = orders.filter(o => o.status === 'validee').length;
+  document.getElementById('stat-shipping').textContent = orders.filter(o => o.status === 'en_livraison').length;
 
   const todayRevenue = todayOrders.filter(o => o.status !== 'en_attente').reduce((s, o) => s + o.total, 0);
   document.getElementById('stat-revenue').textContent = todayRevenue.toLocaleString() + ' FCFA';
@@ -288,7 +309,7 @@ function renderOrders(orders) {
     const date = new Date(order.date);
     const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
     const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
-    const statusLabels = { en_attente: '⏳ En attente', validee: '✅ Validée', livree: '📦 Livrée' };
+    const statusLabels = { en_attente: '⏳ En attente', validee: '🍳 En préparation', en_livraison: '🛵 En livraison', livree: '✅ Livrée' };
 
     return `
     <div class="order-card status-${order.status}">
@@ -327,7 +348,8 @@ function renderOrders(orders) {
         </div>
         <div class="order-actions">
           ${order.status === 'en_attente' ? `<button class="btn-action btn-validate" onclick="confirmValidate('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">check</span> Valider</button>` : ''}
-          ${order.status === 'validee' ? `<button class="btn-action btn-deliver" onclick="confirmDeliver('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">local_shipping</span> Livrée</button>` : ''}
+          ${order.status === 'validee' ? `<button class="btn-action btn-ship" onclick="confirmShip('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">two_wheeler</span> En livraison</button>` : ''}
+          ${order.status === 'en_livraison' ? `<button class="btn-action btn-deliver" onclick="confirmDeliver('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span> Livrée</button>` : ''}
           <button class="btn-action btn-delete" onclick="confirmDelete('${order.id}')"><span class="material-symbols-outlined" style="font-size: 16px;">delete</span></button>
         </div>
       </div>
@@ -352,9 +374,18 @@ function confirmValidate(orderId) {
   document.getElementById('dialog-overlay').classList.add('show');
 }
 
+function confirmShip(orderId) {
+  pendingAction = { type: 'ship', orderId };
+  document.getElementById('dialog-title').textContent = '🛵 Envoyer en livraison';
+  document.getElementById('dialog-message').textContent = `Passer ${orderId} en livraison ?`;
+  document.getElementById('dialog-confirm-btn').textContent = 'Confirmer';
+  document.getElementById('dialog-confirm-btn').style.background = '#1565c0';
+  document.getElementById('dialog-overlay').classList.add('show');
+}
+
 function confirmDeliver(orderId) {
   pendingAction = { type: 'deliver', orderId };
-  document.getElementById('dialog-title').textContent = '📦 Marquer comme livrée';
+  document.getElementById('dialog-title').textContent = '✅ Marquer comme livrée';
   document.getElementById('dialog-message').textContent = `Confirmer la livraison de ${orderId} ?`;
   document.getElementById('dialog-confirm-btn').textContent = 'Confirmer';
   document.getElementById('dialog-confirm-btn').style.background = 'var(--primary)';
@@ -375,37 +406,30 @@ function closeDialog() {
   pendingAction = null;
 }
 
-function confirmAction() {
+async function confirmAction() {
   if (!pendingAction) return;
-  const orders = getOrders();
-  const order = orders.find(o => o.id === pendingAction.orderId);
+  
+  const btn = document.getElementById('dialog-confirm-btn');
+  btn.disabled = true;
+  btn.style.opacity = '0.5';
 
-  if (pendingAction.type === 'validate' && order) {
-    order.status = 'validee';
-    saveOrders(orders);
-
-    // Envoyer WhatsApp au client
-    const itemsList = order.items.map(i =>
-      `• ${i.name} x${i.qty}${i.accomp ? ' + ' + i.accomp.name : ''}`
-    ).join('\n');
-
-    const msg = `✅ *LE PORC DE CHEZ NOUS — Commande Validée*\n\nBonjour ${order.client.name} !\n\nVotre commande *${order.id}* a été validée.\n\n📋 *Détails :*\n${itemsList}\n\n💰 *Total : ${order.total.toLocaleString()} FCFA*\n💳 Paiement : ${order.payment}\n\n🚗 Livraison estimée : 45-60 min\n📍 ${order.client.quartier}\n\nMerci pour votre confiance ! 🍖`;
-
-    // Ouvrir WhatsApp avec le message
-    const phone = order.client.phone.replace(/\s/g, '').replace(/^0/, '225');
-    const waURL = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    window.open(waURL, '_blank');
-
-  } else if (pendingAction.type === 'deliver' && order) {
-    order.status = 'livree';
-    saveOrders(orders);
-
-  } else if (pendingAction.type === 'delete') {
-    const idx = orders.findIndex(o => o.id === pendingAction.orderId);
-    if (idx >= 0) orders.splice(idx, 1);
-    saveOrders(orders);
+  try {
+    if (pendingAction.type === 'validate') {
+      await supabase.from('orders').update({ status: 'validee' }).eq('id', pendingAction.orderId);
+    } else if (pendingAction.type === 'ship') {
+      await supabase.from('orders').update({ status: 'en_livraison' }).eq('id', pendingAction.orderId);
+    } else if (pendingAction.type === 'deliver') {
+      await supabase.from('orders').update({ status: 'livree' }).eq('id', pendingAction.orderId);
+    } else if (pendingAction.type === 'delete') {
+      await supabase.from('orders').delete().eq('id', pendingAction.orderId);
+    }
+  } catch (e) {
+    console.error('Erreur lors de la mise à jour de la commande:', e);
   }
 
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  
   closeDialog();
   loadOrders();
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light" lang="fr">
+<html class="dark" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
@@ -25,7 +25,7 @@
 
 <!-- PWA -->
 <link rel="manifest" href="manifest.json"/>
-<meta name="theme-color" content="#5f1600"/>
+<meta name="theme-color" content="#0a0a0a"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍖</text></svg>"/>
@@ -34,47 +34,8 @@
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preconnect" href="https://lh3.googleusercontent.com"/>
-<link rel="preconnect" href="https://images.unsplash.com"/>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "on-secondary-fixed": "#2b1613", "surface-container-low": "#fbf3e4",
-        "on-surface": "#1e1b13", "outline": "#827470", "on-secondary": "#ffffff",
-        "primary": "#5f1600", "inverse-primary": "#ffb59f", "tertiary": "#47281e",
-        "outline-variant": "#d4c3be", "secondary-fixed": "#ffdad4", "error-container": "#ffdad6",
-        "secondary": "#745853", "on-primary-fixed-variant": "#852300",
-        "on-primary": "#ffffff", "on-tertiary": "#ffffff", "surface-dim": "#e1d9cb",
-        "on-tertiary-container": "#daaa9b", "on-secondary-container": "#795c57",
-        "surface-container": "#f5edde", "secondary-fixed-dim": "#e3beb8",
-        "primary-fixed": "#ffdbd0", "surface-bright": "#fff8ef",
-        "on-primary-container": "#ff9b7d", "primary-container": "#862300",
-        "on-tertiary-fixed-variant": "#613e33", "surface": "#fff8ef",
-        "inverse-surface": "#343026", "on-error-container": "#93000a",
-        "primary-fixed-dim": "#ffb59f", "tertiary-container": "#613e33",
-        "tertiary-fixed": "#ffdbd0", "surface-container-lowest": "#ffffff",
-        "tertiary-fixed-dim": "#edbbac", "on-tertiary-fixed": "#2f140b",
-        "on-background": "#1e1b13", "on-secondary-fixed-variant": "#5b403c",
-        "secondary-container": "#fed7d0", "surface-tint": "#ac3509",
-        "inverse-on-surface": "#f8f0e1", "surface-variant": "#e9e2d3",
-        "on-surface-variant": "#504441", "on-primary-fixed": "#3a0a00",
-        "background": "#fff8ef", "error": "#ba1a1a", "on-error": "#ffffff",
-        "surface-container-highest": "#e9e2d3", "surface-container-high": "#efe7d9",
-        "success": "#2e7d32"
-      },
-      borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
-      fontFamily: { headline: ["Plus Jakarta Sans"], body: ["Manrope"], label: ["Manrope"] }
-    }
-  }
-}
-</script>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -82,85 +43,745 @@ tailwind.config = {
 </script>
 
 <style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .glass { background: rgba(255, 248, 239, 0.35); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.3); }
-  .glass-dark { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
-  .hero-gradient { background: radial-gradient(circle at top right, rgba(134, 35, 0, 0.15), transparent 60%); }
-  .page { display: none; }
-  .page.active { display: block; }
-  .page-transition { animation: pageIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-  @keyframes pageIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(172, 53, 9, 0.3); } 50% { box-shadow: 0 0 30px rgba(172, 53, 9, 0.6); } }
-  @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-  @keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
-  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-  @keyframes progressBar { from { width: 100%; } to { width: 0%; } }
-  @keyframes splash-logo { 0% { transform: scale(0.5) rotate(-10deg); opacity: 0; } 50% { transform: scale(1.1) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
-  @keyframes splash-text { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-  @keyframes splash-out { 0% { opacity: 1; } 100% { opacity: 0; pointer-events: none; } }
-  @keyframes checkmark { 0% { transform: scale(0) rotate(-45deg); opacity: 0; } 50% { transform: scale(1.2) rotate(0deg); } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
-  .animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-  .animate-fade-in { animation: fadeIn 0.5s ease forwards; }
-  .skeleton { background: linear-gradient(90deg, #efe7d9 25%, #f5edde 50%, #efe7d9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 0.75rem; }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  body { font-family: 'Manrope', sans-serif; background-color: #fff8ef; color: #1e1b13; overflow-x: hidden; }
-  h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
-  *:focus-visible { outline: 3px solid #ac3509; outline-offset: 2px; border-radius: 4px; }
+/* ═══════════════════════════════════════════════ */
+/* DESIGN TOKENS — ULTRA MODERN 2026              */
+/* ═══════════════════════════════════════════════ */
+:root {
+  /* Core palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-elevated: #161616;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #222222;
+  --bg-surface: #141414;
+  
+  /* Accent — Burnt orange / ember */
+  --accent: #ff6b35;
+  --accent-light: #ff8c5a;
+  --accent-dark: #e55a28;
+  --accent-glow: rgba(255, 107, 53, 0.35);
+  --accent-subtle: rgba(255, 107, 53, 0.08);
+  
+  /* Text */
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #666666;
+  --text-muted: #444444;
+  
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.06);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(255, 107, 53, 0.3);
+  
+  /* Glass */
+  --glass-bg: rgba(20, 20, 20, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 20px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px var(--accent-glow);
+  
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Gradient meshes */
+  --mesh-1: radial-gradient(at 20% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+  --mesh-2: radial-gradient(at 80% 20%, rgba(180, 60, 255, 0.05) 0%, transparent 50%);
+  --mesh-3: radial-gradient(at 50% 50%, rgba(255, 160, 100, 0.04) 0%, transparent 60%);
+  
+  /* Status */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+}
 
-  .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px); background: #343026; color: #fff; padding: 14px 28px; border-radius: 9999px; font-weight: 600; font-size: 14px; z-index: 9999; opacity: 0; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; white-space: nowrap; box-shadow: 0 12px 40px rgba(30,27,19,0.25); }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+/* Light mode overrides */
+html:not(.dark) {
+  --bg-primary: #fafaf9;
+  --bg-secondary: #f5f5f4;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f5f4;
+  --bg-surface: #fafaf9;
+  --text-primary: #0a0a0a;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
+  --text-muted: #d4d4d8;
+  --border: rgba(0, 0, 0, 0.06);
+  --border-light: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+  --mesh-1: radial-gradient(at 20% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+  --mesh-2: radial-gradient(at 80% 20%, rgba(180, 60, 255, 0.03) 0%, transparent 50%);
+  --mesh-3: radial-gradient(at 50% 50%, rgba(255, 160, 100, 0.02) 0%, transparent 60%);
+}
 
-  .badge { position: absolute; top: 12px; left: 12px; z-index: 5; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; backdrop-filter: blur(8px); }
-  .badge-fire { background: rgba(172,53,9,0.9); color: #fff; }
-  .badge-new { background: rgba(71,40,30,0.85); color: #ffdbd0; }
-  .badge-promo { background: rgba(255,181,159,0.95); color: #3a0a00; }
+/* ═══════════════════════════════════════════════ */
+/* RESET & BASE                                    */
+/* ═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4 { font-family: 'Outfit', 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+input, textarea, select, button { font-family: inherit; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; }
 
-  .whatsapp-fab { position: fixed; bottom: 90px; right: 20px; z-index: 100; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s ease; animation: float 3s ease-in-out infinite; }
-  .whatsapp-fab:hover { transform: scale(1.1); }
-  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+*:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-  .promo-timer { background: linear-gradient(135deg, #5f1600, #ac3509); color: white; text-align: center; padding: 8px 16px; font-size: 13px; font-weight: 700; }
-  .social-proof { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #504441; font-weight: 600; }
-  .social-proof .dot { width: 6px; height: 6px; border-radius: 50%; background: #25D366; animation: pulse-glow 2s infinite; }
-  .cart-pop { animation: bounceIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
-  .product-card { transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
-  .product-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(30,27,19,0.12); }
+/* ═══════════════════════════════════════════════ */
+/* UTILITIES                                       */
+/* ═══════════════════════════════════════════════ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+.glass-heavy {
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+html:not(.dark) .glass-heavy {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(0,0,0,0.06);
+}
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #ff9966, var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.glow-accent { box-shadow: var(--shadow-glow); }
+.mesh-bg { background-image: var(--mesh-1), var(--mesh-2), var(--mesh-3); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.truncate-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-  #splashscreen { position: fixed; inset: 0; z-index: 99999; background: linear-gradient(135deg, #5f1600 0%, #862300 40%, #ac3509 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
-  #splashscreen.hide { animation: splash-out 0.6s ease forwards; }
+/* ═══════════════════════════════════════════════ */
+/* PAGES                                           */
+/* ═══════════════════════════════════════════════ */
+.page { 
+  display: none; 
+  padding-bottom: 100px; /* Espace pour ne pas être caché par la barre de menu */
+}
+.page.active { display: block; }
+.page-transition { animation: pageIn 0.5s var(--ease-out) forwards; }
 
-  /* Accompagnement selector */
-  .accomp-card { border: 2px solid transparent; transition: all 0.3s ease; cursor: pointer; }
-  .accomp-card.selected { border-color: #ac3509; background: rgba(172,53,9,0.08); transform: scale(1.03); }
-  .accomp-card .check-icon { display: none; }
-  .accomp-card.selected .check-icon { display: flex; }
+/* ═══════════════════════════════════════════════ */
+/* ANIMATIONS                                      */
+/* ═══════════════════════════════════════════════ */
+@keyframes pageIn { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: none; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: none; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px var(--accent-glow); } 50% { box-shadow: 0 0 35px var(--accent-glow); } }
+@keyframes breathe { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+@keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes progressBar { from { width: 100%; } to { width: 0%; } }
+@keyframes splash-logo { 0% { transform: scale(0.5) rotate(-10deg); opacity: 0; } 50% { transform: scale(1.1) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes splash-text { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes splash-out { 0% { opacity: 1; } 100% { opacity: 0; pointer-events: none; } }
+@keyframes checkmark { 0% { transform: scale(0) rotate(-45deg); opacity: 0; } 50% { transform: scale(1.2) rotate(0deg); } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(12%, 9%); }
+  70% { transform: translate(9%, 4%); }
+  90% { transform: translate(-1%, 7%); }
+}
+@keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
 
-  /* Order confirmation screen */
-  .order-success-icon { animation: checkmark 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.animate-slide-up { animation: slideUp 0.6s var(--ease-out) forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+
+/* ═══════════════════════════════════════════════ */
+/* SPLASHSCREEN                                    */
+/* ═══════════════════════════════════════════════ */
+#splashscreen {
+  position: fixed; inset: 0; z-index: 99999;
+  background: var(--bg-primary);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity 0.6s ease;
+}
+#splashscreen::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 40%, var(--accent-glow), transparent 70%);
+  opacity: 0.4;
+}
+#splashscreen.hide { animation: splash-out 0.6s ease forwards; }
+
+/* ═══════════════════════════════════════════════ */
+/* TOAST — Dynamic Island Style                    */
+/* ═══════════════════════════════════════════════ */
+.island {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 9999;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 12px 24px;
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer;
+  transition: all 0.5s var(--ease-out);
+  overflow: hidden;
+  opacity: 0; pointer-events: none;
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border);
+}
+.island.show { opacity: 1; pointer-events: auto; }
+.island-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0; animation: breathe 2s ease infinite; }
+.island-label { font-size: 14px; font-weight: 600; white-space: nowrap; color: var(--text-primary); }
+@keyframes islandPulse { 0% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.04); } 100% { transform: translateX(-50%) scale(1); } }
+
+/* ═══════════════════════════════════════════════ */
+/* PROMO BANNER                                    */
+/* ═══════════════════════════════════════════════ */
+.promo-bar {
+  padding: 10px 0; overflow: hidden;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-dark));
+  background-size: 200% 100%;
+  animation: aurora 4s ease infinite;
+}
+.promo-bar .marquee-track {
+  display: flex; white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+.promo-bar .marquee-item {
+  display: inline-flex; align-items: center;
+  padding: 0 24px; flex-shrink: 0;
+  font-size: 13px; font-weight: 700; color: white;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* HEADER                                          */
+/* ═══════════════════════════════════════════════ */
+.app-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+html:not(.dark) .app-header {
+  background: rgba(250,250,249,0.7);
+}
+.header-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px; font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.header-btn {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  position: relative;
+}
+.header-btn:hover { background: var(--accent-subtle); color: var(--accent); }
+.header-btn:active { transform: scale(0.9); }
+.cart-count {
+  position: absolute; top: 2px; right: 2px;
+  min-width: 18px; height: 18px;
+  background: var(--accent); color: white;
+  font-size: 10px; font-weight: 800;
+  border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 4px;
+  border: 2px solid var(--bg-primary);
+}
+
+/* ═══════════════════════════════════════════════ */
+/* BOTTOM NAV                                      */
+/* ═══════════════════════════════════════════════ */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; width: 100%; z-index: 50;
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 8px 16px calc(env(safe-area-inset-bottom, 8px) + 8px);
+  background: rgba(10,10,10,0.35);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+html:not(.dark) .bottom-nav { background: rgba(255,255,255,0.45); border-top: 1px solid rgba(0,0,0,0.05); }
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-size: 10px; font-weight: 600;
+  transition: all 0.2s ease; position: relative;
+}
+.nav-item:hover, .nav-item.active { color: var(--accent); }
+.nav-item.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+.nav-item .material-symbols-outlined { font-size: 22px; }
+
+/* ═══════════════════════════════════════════════ */
+/* WHATSAPP FAB                                    */
+/* ═══════════════════════════════════════════════ */
+.whatsapp-fab {
+  position: fixed; bottom: 82px; right: 16px; z-index: 1000;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #25D366; color: white;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all 0.3s ease; animation: float 3s ease-in-out infinite;
+}
+.whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+.whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+
+/* ═══════════════════════════════════════════════ */
+/* BADGES                                          */
+/* ═══════════════════════════════════════════════ */
+.badge {
+  position: absolute; top: 12px; left: 12px; z-index: 5;
+  padding: 5px 12px; border-radius: var(--radius-full);
+  font-size: 10px; font-weight: 800; letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+.badge-fire { background: rgba(255,107,53,0.9); color: #fff; }
+.badge-new { background: rgba(139,92,246,0.85); color: #fff; }
+.badge-promo { background: rgba(34,197,94,0.85); color: #fff; }
+
+/* ═══════════════════════════════════════════════ */
+/* PRODUCT CARD                                    */
+/* ═══════════════════════════════════════════════ */
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out);
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(255,107,53,0.08);
+}
+.product-card .card-image {
+  position: relative; width: 100%; height: 200px; overflow: hidden;
+}
+.product-card .card-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+.product-card:hover .card-image img { transform: scale(1.08); }
+.product-card .card-image::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+  background: linear-gradient(to top, var(--bg-card), transparent);
+  pointer-events: none;
+}
+.product-card .card-body { padding: 16px 16px 18px; }
+.product-card .card-body h4 {
+  font-size: 16px; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.product-card .card-body .subtitle {
+  font-size: 12px; color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+.product-card .card-body .rating-row {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; margin-bottom: 12px;
+}
+.product-card .card-body .rating-row .star { color: #fbbf24; font-size: 14px; }
+.product-card .card-body .price-row {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.product-card .card-body .price {
+  font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800;
+  color: var(--accent);
+}
+.product-card .card-body .price span { font-size: 12px; font-weight: 600; opacity: 0.7; }
+.add-btn {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px var(--accent-glow);
+  transition: all 0.2s ease;
+}
+.add-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px var(--accent-glow); }
+.add-btn:active { transform: scale(0.9); }
+
+/* ═══════════════════════════════════════════════ */
+/* CATEGORY CHIPS                                  */
+/* ═══════════════════════════════════════════════ */
+.cat-btn {
+  flex-shrink: 0;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-size: 13px; font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.cat-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* ═══════════════════════════════════════════════ */
+/* SEARCH                                          */
+/* ═══════════════════════════════════════════════ */
+.search-box {
+  display: flex; align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px; gap: 12px;
+  transition: border-color 0.3s ease;
+}
+.search-box:focus-within { border-color: var(--accent); }
+.search-box input {
+  background: transparent; border: none; outline: none;
+  width: 100%; font-size: 15px; font-weight: 500;
+  color: var(--text-primary);
+}
+.search-box input::placeholder { color: var(--text-tertiary); }
+
+/* ═══════════════════════════════════════════════ */
+/* GLASS CARDS GENERIC                             */
+/* ═══════════════════════════════════════════════ */
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.info-card-glow {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255,107,53,0.06);
+}
+
+/* ═══════════════════════════════════════════════ */
+/* FORM FIELDS                                     */
+/* ═══════════════════════════════════════════════ */
+.form-field {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 15px; font-weight: 500;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-field::placeholder { color: var(--text-tertiary); }
+.form-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,107,53,0.1); }
+.form-label {
+  display: block; font-size: 12px; font-weight: 700;
+  color: var(--text-secondary); margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* BUTTONS                                         */
+/* ═══════════════════════════════════════════════ */
+.btn-primary {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  padding: 16px 28px;
+  border-radius: var(--radius-full);
+  font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 8px 24px var(--accent-glow);
+  transition: all 0.3s ease;
+  position: relative; overflow: hidden;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px var(--accent-glow); }
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+
+.btn-secondary {
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-size: 14px; font-weight: 700;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  background: var(--bg-card);
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ═══════════════════════════════════════════════ */
+/* PAYMENT OPTIONS                                 */
+/* ═══════════════════════════════════════════════ */
+.payment-option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  cursor: pointer; transition: all 0.3s ease;
+}
+.payment-option:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 20px rgba(255,107,53,0.06);
+}
+.payment-option input { display: none; }
+.payment-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 14px; flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* ACCOMPAGNEMENT                                  */
+/* ═══════════════════════════════════════════════ */
+.accomp-card {
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex; flex-direction: column; align-items: stretch;
+  cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-card);
+  position: relative;
+}
+.accomp-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+}
+.accomp-card .check-icon { 
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accomp-card.selected .check-icon { 
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════════ */
+/* STATUS PILLS                                    */
+/* ═══════════════════════════════════════════════ */
+.status-pill {
+  padding: 5px 14px; border-radius: var(--radius-full);
+  font-size: 11px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* DARK TOGGLE                                     */
+/* ═══════════════════════════════════════════════ */
+.dark-toggle {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s ease;
+  border: none; background: transparent; color: var(--text-secondary);
+}
+.dark-toggle:hover { background: var(--accent-subtle); color: var(--accent); }
+
+/* ═══════════════════════════════════════════════ */
+/* ORDER SUCCESS                                   */
+/* ═══════════════════════════════════════════════ */
+.order-success-icon { animation: checkmark 0.8s var(--ease-out) 0.2s both; }
+
+/* ═══════════════════════════════════════════════ */
+/* PARTICLES                                       */
+/* ═══════════════════════════════════════════════ */
+.particle { position: fixed; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.6s var(--ease-out); }
+.confetti { position: fixed; width: 6px; height: 12px; pointer-events: none; z-index: 9999; border-radius: 2px; transition: all 0.7s var(--ease-out); }
+.ring { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998; border: 2px solid; opacity: 0; transition: all 0.4s ease; }
+.fly-to-cart { position: fixed; z-index: 9999; border-radius: 50%; object-fit: cover; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+/* ═══════════════════════════════════════════════ */
+/* SECTION HELPERS & SPACING                       */
+/* ═══════════════════════════════════════════════ */
+.section-title {
+  font-size: 14px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* HERO AURORA GRADIENT BG                         */
+/* ═══════════════════════════════════════════════ */
+.aurora-bg {
+  background: linear-gradient(-45deg, #0a0a0a, #1a0800, #0a0a0a, #0d0506);
+  background-size: 400% 400%;
+  animation: aurora 12s ease infinite;
+}
+html:not(.dark) .aurora-bg {
+  background: linear-gradient(-45deg, #fff8ef, #fff0e5, #fafaf9, #fff5ee);
+  background-size: 400% 400%;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* GRAIN TEXTURE OVERLAY                           */
+/* ═══════════════════════════════════════════════ */
+.grain::before {
+  content: '';
+  position: absolute; inset: -50%;
+  width: 200%; height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+  pointer-events: none; z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* RESPONSIVE GRID                                 */
+/* ═══════════════════════════════════════════════ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 768px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+@media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
+@media (max-width: 360px) { .product-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════ */
+/* SOCIAL PROOF                                    */
+/* ═══════════════════════════════════════════════ */
+.social-proof-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--success);
+  animation: breathe 2s ease infinite;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* CART ITEM                                       */
+/* ═══════════════════════════════════════════════ */
+.cart-item {
+  display: flex; align-items: center;
+  padding: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+.cart-item:hover { border-color: var(--border-light); }
+
+/* ═══════════════════════════════════════════════ */
+/* QTY SELECTOR                                    */
+/* ═══════════════════════════════════════════════ */
+.qty-selector {
+  display: flex; align-items: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+}
+.qty-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+.qty-btn:hover { background: var(--accent-subtle); color: var(--accent); }
+.qty-btn.add { background: var(--accent); color: white; }
+.qty-btn.add:hover { background: var(--accent-dark); }
+.qty-count { padding: 0 10px; font-weight: 700; font-size: 14px; min-width: 32px; text-align: center; }
+
+/* ═══════════════════════════════════════════════ */
+/* MOBILE-ONLY (>= 768px hide bottom nav)          */
+/* ═══════════════════════════════════════════════ */
+@media (min-width: 768px) { .bottom-nav { display: none; } }
 </style>
 </head>
-<body class="min-h-screen antialiased">
+<body>
 
 <!-- SKIP NAV -->
-<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:bg-primary focus:text-white focus:px-6 focus:py-3 focus:rounded-full focus:font-bold">Aller au contenu principal</a>
+<a href="#main-content" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;" id="skip-nav">Aller au contenu principal</a>
 
-<!-- SPLASHSCREEN -->
+<!-- ═══════════════════════════════════════════ -->
+<!-- SPLASHSCREEN                               -->
+<!-- ═══════════════════════════════════════════ -->
 <div id="splashscreen" role="status" aria-label="Chargement de Le Porc de Chez Nous">
-  <div style="animation: splash-logo 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;">
-    <span class="material-symbols-outlined text-white" style="font-size: 64px; font-variation-settings: 'FILL' 1;">restaurant</span>
-  </div>
-  <h1 style="animation: splash-text 0.6s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;" class="font-headline text-white text-4xl font-extrabold tracking-tight mt-4">Le Porc de Chez Nous</h1>
-  <p style="animation: splash-text 0.6s 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;" class="text-white/70 text-sm font-medium mt-2 tracking-widest uppercase">Le Goût Authentique</p>
-  <div style="animation: splash-text 0.6s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;" class="mt-8 w-32 h-1 bg-white/20 rounded-full overflow-hidden">
-    <div class="h-full bg-white/80 rounded-full" style="animation: progressBar 2s 0.5s linear forwards; width: 100%;"></div>
+  <div style="position:relative;z-index:2;">
+    <div style="animation: splash-logo 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;">
+      <span class="material-symbols-outlined" style="font-size: 56px; color: var(--accent); font-variation-settings: 'FILL' 1;">restaurant</span>
+    </div>
+    <h1 style="animation: splash-text 0.6s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; font-family: Outfit; font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; margin-top: 16px; text-align:center;">
+      <span class="gradient-text">Le Porc de Chez Nous</span>
+    </h1>
+    <p style="animation: splash-text 0.6s 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; color: var(--text-tertiary); font-size: 12px; font-weight: 600; margin-top: 8px; letter-spacing: 0.2em; text-transform: uppercase; text-align:center;">Le Goût Authentique</p>
+    <div style="animation: splash-text 0.6s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; width: 120px; height: 3px; background: var(--bg-card); border-radius: 99px; margin: 28px auto 0; overflow: hidden;">
+      <div style="height: 100%; background: var(--accent); border-radius: 99px; animation: progressBar 2s 0.5s linear forwards; width: 100%;"></div>
+    </div>
   </div>
 </div>
 
-<!-- TOAST -->
-<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+<!-- DYNAMIC ISLAND -->
+<div class="island" id="toast" role="alert" aria-live="polite">
+  <div class="island-dot"></div>
+  <div class="island-label" id="toast-text">Notification</div>
+</div>
 
 <!-- WHATSAPP FAB -->
 <a href="https://wa.me/2250700000000" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Nous contacter sur WhatsApp" id="whatsapp-fab">
@@ -168,382 +789,795 @@ tailwind.config = {
 </a>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 1: BIENVENUE -->
+<!-- PAGE 1: WELCOME                            -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-welcome" class="page active">
-  <main class="relative h-screen w-full flex flex-col justify-end overflow-hidden" id="main-content" role="main">
-    <div class="absolute inset-0 z-0">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover" poster="">
-        <source src="premier visuel /2026-01-12_@news_adresses_7594515509538819350.mp4" type="video/mp4"/>
+  <main class="relative" style="height:100dvh; overflow:hidden;" id="main-content" role="main">
+    <!-- Video Background -->
+    <div style="position:absolute;inset:0;z-index:0;">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;filter:brightness(0.35);">
+        <source src="premier visuel /bg_video_optimized.mp4" type="video/mp4"/>
       </video>
-      <div class="absolute inset-0 bg-gradient-to-b from-[#1e1b13]/40 via-transparent to-[#1e1b13]/70"></div>
-      <div class="absolute inset-0 hero-gradient"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, transparent 30%, rgba(10,10,10,0.85) 70%, rgba(10,10,10,0.95) 100%);"></div>
     </div>
-    <div class="absolute top-12 left-0 w-full px-8 z-10 flex flex-col items-center animate-fade-in">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">restaurant</span>
-        <span class="font-headline font-extrabold text-2xl tracking-tighter text-white drop-shadow-lg">Le Porc de Chez Nous</span>
+
+    <!-- Logo Top -->
+    <div style="position:absolute;top:0;left:0;right:0;z-index:10;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="material-symbols-outlined" style="font-size:24px;color:var(--accent);font-variation-settings:'FILL' 1;" aria-hidden="true">restaurant</span>
+        <span style="font-family:Outfit;font-weight:800;font-size:18px;letter-spacing:-0.03em;color:white;">Le Porc de Chez Nous</span>
       </div>
-      <div class="h-[2px] w-12 bg-surface-tint rounded-full opacity-60" aria-hidden="true"></div>
+      <button onclick="toggleDarkMode()" class="dark-toggle" style="color:rgba(255,255,255,0.7);" aria-label="Changer le thème">
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+      </button>
     </div>
-    <div class="relative z-20 px-6 pb-12 animate-slide-up">
-      <div class="glass rounded-lg p-8 shadow-[0_32px_64px_rgba(30,27,19,0.15)] flex flex-col items-center text-center max-w-lg mx-auto">
-        <h1 class="font-headline text-[2.5rem] md:text-[2.75rem] leading-[1.1] font-extrabold text-on-surface tracking-tight mb-4">
-          Savourez la <span class="text-surface-tint">Meilleure</span> Viande de Porc d'Abidjan !
+
+    <!-- Hero Content -->
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:20;padding:0 24px 40px;">
+      <div class="animate-slide-up" style="max-width:480px;margin:0 auto;">
+        <!-- Tagline -->
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,53,0.12);border:1px solid rgba(255,107,53,0.25);border-radius:9999px;padding:6px 16px;margin-bottom:20px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:breathe 2s ease infinite;"></span>
+          <span style="font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;">Ouvert maintenant</span>
+        </div>
+
+        <h1 style="font-family:Outfit;font-size:clamp(2.5rem, 8vw, 3.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.04em;color:white;margin-bottom:16px;">
+          Le Meilleur <span class="gradient-text">Porc Grillé</span> d'Abidjan.
         </h1>
-        <p class="font-body text-lg text-on-surface-variant/90 leading-relaxed mb-6 max-w-[320px]">
-          Découvrez nos spécialités de porc grillé, braisé et frit. Commandez et faites-vous livrer.
+        <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:28px;max-width:360px;">
+          Porc braisé, frit ou grillé — livré chez vous en 45 minutes. Goûtez l'authentique.
         </p>
-        <div class="flex items-center gap-3 mb-8">
-          <div class="flex -space-x-2">
-            <div class="w-8 h-8 rounded-full bg-primary-container border-2 border-white flex items-center justify-center text-xs text-white font-bold">A</div>
-            <div class="w-8 h-8 rounded-full bg-tertiary border-2 border-white flex items-center justify-center text-xs text-white font-bold">K</div>
-            <div class="w-8 h-8 rounded-full bg-surface-tint border-2 border-white flex items-center justify-center text-xs text-white font-bold">M</div>
+
+        <!-- Social proof -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+          <div style="display:flex;">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--accent);border:2px solid rgba(10,10,10,0.8);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:white;">A</div>
+            <div style="width:32px;height:32px;border-radius:50%;background:#8b5cf6;border:2px solid rgba(10,10,10,0.8);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:white;">K</div>
+            <div style="width:32px;height:32px;border-radius:50%;background:#06b6d4;border:2px solid rgba(10,10,10,0.8);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:white;">M</div>
           </div>
-          <div class="text-left">
-            <p class="text-sm font-bold text-on-surface">+1 200 clients satisfaits</p>
-            <div class="flex items-center gap-1">
-              <span class="text-surface-tint text-xs">★★★★★</span>
-              <span class="text-xs text-on-surface-variant">4.8/5</span>
+          <div>
+            <p style="font-size:13px;font-weight:700;color:white;">+1 200 clients satisfaits</p>
+            <div style="display:flex;align-items:center;gap:4px;">
+              <span style="color:#fbbf24;font-size:12px;">★★★★★</span>
+              <span style="font-size:11px;color:rgba(255,255,255,0.4);">4.8/5</span>
             </div>
           </div>
         </div>
-        <button onclick="navigateTo('shop')" class="group relative w-full overflow-hidden rounded-full bg-surface-tint py-5 px-8 flex items-center justify-center transition-all duration-300 active:scale-95 shadow-lg shadow-surface-tint/20">
-          <span class="font-label font-bold text-lg text-on-primary mr-2">Commander</span>
-          <span class="material-symbols-outlined text-on-primary group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
-          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true"></div>
+
+        <!-- CTA -->
+        <button onclick="navigateTo('shop')" class="btn-primary" style="font-size:18px;padding:18px 32px;">
+          <span>Commander maintenant</span>
+          <span class="material-symbols-outlined" style="font-size:20px;" aria-hidden="true">arrow_forward</span>
         </button>
-        <div class="mt-6">
-          <button onclick="navigateTo('shop')" class="font-label text-sm font-semibold text-on-surface opacity-70 hover:opacity-100 transition-opacity uppercase tracking-widest">Voir le menu</button>
-        </div>
+        <button onclick="navigateTo('shop')" style="display:block;margin:16px auto 0;font-size:13px;font-weight:600;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.15em;transition:color 0.2s;">
+          Voir le menu →
+        </button>
       </div>
     </div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-surface-tint/10 rounded-full blur-[100px] z-10 pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute top-[20%] left-[-5%] w-48 h-48 bg-primary-container/10 rounded-full blur-[80px] z-10 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Ambient glow -->
+    <div style="position:absolute;bottom:-20%;right:-10%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,107,53,0.15),transparent 70%);pointer-events:none;z-index:5;" aria-hidden="true"></div>
   </main>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 2: BOUTIQUE (SHOP) — SANS VIDE, SANS AVATAR -->
+<!-- PAGE 2: BOUTIQUE (SHOP)                    -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-shop" class="page">
-  <!-- Promo Timer Bar collé en haut -->
-  <div class="promo-timer" id="promo-bar" role="status">
-    <div class="flex items-center justify-center gap-2 flex-wrap">
-      <span class="material-symbols-outlined text-sm" aria-hidden="true">timer</span>
-      <span>🔥 Offre Spéciale — <strong id="promo-countdown">02:30:00</strong> restantes — <strong>-30% Pack Famille</strong></span>
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promo-bar">
+    <div class="marquee-track">
+      <span class="marquee-item">🔥 OFFRE SPÉCIALE — <strong class="promo-countdown">02:30:00</strong> RESTANTES — <strong>-30% PACK FAMILLE</strong></span>
+      <span class="marquee-item">⚡ LIVRAISON RAPIDE — 45 MIN CHRONO — ABIDJAN</span>
+      <span class="marquee-item">🔥 OFFRE SPÉCIALE — <strong class="promo-countdown">02:30:00</strong> RESTANTES — <strong>-30% PACK FAMILLE</strong></span>
+      <span class="marquee-item">⚡ LIVRAISON RAPIDE — 45 MIN CHRONO — ABIDJAN</span>
     </div>
   </div>
 
-  <!-- Header SANS avatar -->
-  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]" role="banner">
-    <div class="flex items-center gap-3">
-      <button onclick="navigateTo('welcome')" class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-surface-container/50 transition-colors active:scale-95" aria-label="Retour accueil">
+  <!-- Header -->
+  <header class="app-header" role="banner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="navigateTo('welcome')" class="header-btn" aria-label="Retour accueil">
         <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
       </button>
-      <h1 class="text-xl font-extrabold text-primary font-headline tracking-tight">Le Porc de Chez Nous</h1>
+      <h1 class="header-logo gradient-text">Le Porc de Chez Nous</h1>
     </div>
-    <button onclick="navigateTo('cart')" class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Voir le panier">
-      <span class="material-symbols-outlined text-primary" aria-hidden="true">shopping_bag</span>
-      <span id="cart-badge-shop" class="absolute -top-1 -right-1 w-5 h-5 bg-surface-tint text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
-    </button>
+    <div style="display:flex;align-items:center;gap:4px;">
+      <button onclick="toggleDarkMode()" class="header-btn dark-toggle" aria-label="Changer le thème">
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+      </button>
+      <button onclick="navigateTo('cart')" class="header-btn" aria-label="Voir le panier">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+        <span id="cart-badge-shop" class="cart-count" style="display:none;">0</span>
+      </button>
+    </div>
   </header>
 
-  <main class="pb-32 px-6 max-w-7xl mx-auto" role="main">
-    <!-- Hero Banner -->
-    <section class="relative w-full h-[220px] md:h-[380px] rounded-lg overflow-hidden mb-6 mt-4 shadow-2xl" aria-label="Promotion">
-      <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Nm6s_or2pvEZOm3S9pl4eljpPssBVHNRw6zOqIWYVqo1AfAnSDIXEq7l2-pIqh2BaGSMjJ0VaK3pX-ICPG6YE4JBzKQmU5O-4nsTBiT1MawHG1r9yYqSsIMmRyVbyvWHasfBYbUVwTpx9hKPx4S8QasO_DaEpWGDR9ZfHJTFFnb-J8Fk_8t601Nw9NsjMW83EOGHCtwj5jZCLub_CADZ93yXuEp37-01vXnVODpkZd6ZcIYXaoFK4cU0qX5HOS5xydMRV1zplf0" alt="Promotion Pack Famille" loading="lazy" decoding="async"/>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 to-transparent"></div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-16">
-        <div class="glass-dark max-w-md p-6 md:p-8 rounded-lg">
-          <span class="text-white/80 font-bold tracking-widest text-xs uppercase mb-2 block">Offre Spéciale Week-end</span>
-          <h2 class="text-white text-4xl md:text-7xl font-extrabold font-headline leading-none mb-4">-30%</h2>
-          <p class="text-white/90 text-base md:text-lg font-medium mb-6">Pack Famille : Porc Braisé + Frit + Attiéké à prix réduit !</p>
+  <main class="mesh-bg" style="padding-bottom:120px;min-height:100dvh;" role="main">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <!-- Hero Banner -->
+      <section style="position:relative;width:100%;border-radius:var(--radius-xl);overflow:hidden;margin:16px 0 20px;aspect-ratio:16/7;" aria-label="Promotion">
+        <img style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" src="banner_promo.jpg" alt="Promotion Pack Famille" loading="lazy" decoding="async"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.3) 60%, transparent);"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:28px;">
+          <span style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px;">Offre Weekend</span>
+          <h2 style="font-family:Outfit;font-size:clamp(2rem,6vw,4rem);font-weight:900;color:white;line-height:1;letter-spacing:-0.04em;margin-bottom:8px;">-30%</h2>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);max-width:260px;">Pack Famille : Porc Braisé + Frit + Attiéké</p>
+        </div>
+      </section>
+
+      <!-- Social Proof -->
+      <div class="social-proof-bar" style="margin-bottom:20px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-secondary);">
+          <span class="live-dot"></span>
+          <span>42 commandes aujourd'hui</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent);">
+          <span class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true">delivery_dining</span>
+          <span>~45 min</span>
         </div>
       </div>
-    </section>
 
-    <!-- Social Proof + Livraison -->
-    <div class="flex items-center justify-between mb-6 px-2 py-3 bg-surface-container/50 rounded-xl">
-      <div class="social-proof"><span class="dot" aria-hidden="true"></span><span>42 commandes aujourd'hui</span></div>
-      <div class="flex items-center gap-1 text-sm font-bold text-primary">
-        <span class="material-symbols-outlined text-sm" aria-hidden="true">delivery_dining</span><span>Livré en ~45 min</span>
+      <!-- Search -->
+      <div class="search-box" style="margin-bottom:20px;">
+        <span class="material-symbols-outlined" style="color:var(--text-tertiary);" aria-hidden="true">search</span>
+        <input id="search-input" oninput="filterProducts()" placeholder="Rechercher un plat..." type="search" aria-label="Rechercher un plat"/>
       </div>
+
+      <!-- Categories -->
+      <section style="margin-bottom:24px;" aria-label="Catégories">
+        <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;" class="no-scrollbar" id="category-filters" role="tablist">
+          <button onclick="filterCategory('all')" data-cat="all" role="tab" aria-selected="true" class="cat-btn active">Tout</button>
+          <button onclick="filterCategory('braise')" data-cat="braise" role="tab" aria-selected="false" class="cat-btn">Braisé</button>
+          <button onclick="filterCategory('frit')" data-cat="frit" role="tab" aria-selected="false" class="cat-btn">Frit au four</button>
+          <button onclick="filterCategory('saute')" data-cat="saute" role="tab" aria-selected="false" class="cat-btn">Sauté</button>
+          <button onclick="filterCategory('accompagnements')" data-cat="accompagnements" role="tab" aria-selected="false" class="cat-btn">Accompagnements</button>
+          <button onclick="filterCategory('boissons')" data-cat="boissons" role="tab" aria-selected="false" class="cat-btn">Boissons</button>
+        </div>
+      </section>
+
+      <!-- Products Grid -->
+      <section id="product-grid" class="product-grid" role="list" aria-label="Liste des plats"></section>
     </div>
-
-    <!-- Search -->
-    <div class="mb-6">
-      <div class="flex items-center bg-surface-container rounded-xl px-4 py-3 gap-3">
-        <span class="material-symbols-outlined text-outline" aria-hidden="true">search</span>
-        <input id="search-input" oninput="filterProducts()" class="bg-transparent border-none focus:ring-0 text-base font-medium w-full placeholder:text-outline" placeholder="Rechercher un plat..." type="search" aria-label="Rechercher un plat"/>
-      </div>
-    </div>
-
-    <!-- Categories -->
-    <section class="mb-8" aria-label="Catégories">
-      <h3 class="text-xl font-bold font-headline text-on-surface mb-4">Catégories</h3>
-      <div class="flex gap-3 overflow-x-auto pb-3 no-scrollbar" id="category-filters" role="tablist">
-        <button onclick="filterCategory('all')" data-cat="all" role="tab" aria-selected="true" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 text-sm">Tout</button>
-        <button onclick="filterCategory('braise')" data-cat="braise" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Braisé</button>
-        <button onclick="filterCategory('frit')" data-cat="frit" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Frit au four</button>
-        <button onclick="filterCategory('saute')" data-cat="saute" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Sauté</button>
-        <button onclick="filterCategory('accompagnements')" data-cat="accompagnements" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Accompagnements</button>
-        <button onclick="filterCategory('boissons')" data-cat="boissons" role="tab" aria-selected="false" class="cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm">Boissons</button>
-      </div>
-    </section>
-
-    <!-- Products -->
-    <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" role="list" aria-label="Liste des plats"></section>
   </main>
 
   <!-- Bottom Nav -->
-  <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-[#fff8ef]/10 backdrop-blur-[20px] rounded-t-[2rem] border-t border-white/20 shadow-[0_-8px_48px_rgba(30,27,19,0.08)]" role="navigation" aria-label="Navigation">
-    <button onclick="navigateTo('welcome')" class="flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
-      <span class="material-symbols-outlined" aria-hidden="true">home</span><span class="text-[11px] font-semibold">Accueil</span>
-    </button>
-    <button onclick="navigateTo('shop')" class="flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
-      <span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span><span class="text-[11px] font-semibold">Menu</span>
-    </button>
-    <button onclick="navigateTo('cart')" class="relative flex flex-col items-center justify-center text-tertiary opacity-60 hover:opacity-100 transition-opacity">
-      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span><span class="text-[11px] font-semibold">Panier</span>
-      <span id="cart-badge-nav" class="absolute -top-1 right-1 w-4 h-4 bg-surface-tint text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+  <nav class="bottom-nav" role="navigation" aria-label="Navigation">
+    <button onclick="navigateTo('welcome')" class="nav-item"><span class="material-symbols-outlined" aria-hidden="true">home</span><span>Accueil</span></button>
+    <button onclick="navigateTo('shop')" class="nav-item active"><span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span><span>Menu</span></button>
+    <button onclick="navigateTo('tracking')" class="nav-item"><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span><span>Suivi</span></button>
+    <button onclick="navigateTo('cart')" class="nav-item" style="position:relative;">
+      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span><span>Panier</span>
+      <span id="cart-badge-nav" class="cart-count" style="display:none;top:-2px;right:4px;">0</span>
     </button>
   </nav>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 3: DÉTAIL + CHOIX ACCOMPAGNEMENT -->
+<!-- PAGE 3: DÉTAIL + ACCOMPAGNEMENT            -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-detail" class="page">
-  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]" role="banner">
-    <div class="flex items-center gap-3">
-      <button onclick="navigateTo('shop')" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors active:scale-95" aria-label="Retour au menu">
-        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+  <header class="app-header" role="banner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="navigateTo('shop')" class="header-btn" aria-label="Retour au menu">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
       </button>
-      <span class="text-xl font-extrabold text-primary tracking-tight font-headline">Détails</span>
+      <span class="header-logo" style="font-size:18px;color:var(--text-primary);">Détails</span>
     </div>
-    <button onclick="navigateTo('cart')" class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Voir le panier">
-      <span class="material-symbols-outlined text-primary" aria-hidden="true">shopping_bag</span>
-      <span id="cart-badge-detail" class="absolute -top-1 -right-1 w-5 h-5 bg-surface-tint text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    <button onclick="navigateTo('cart')" class="header-btn" aria-label="Voir le panier">
+      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+      <span id="cart-badge-detail" class="cart-count" style="display:none;">0</span>
     </button>
   </header>
 
-  <main class="min-h-screen pb-40" role="main">
+  <main style="min-height:100dvh;padding-bottom:160px;" role="main">
     <!-- Hero Image -->
-    <section class="relative h-[350px] md:h-[450px] w-full overflow-hidden">
-      <img id="detail-image" class="w-full h-full object-cover" src="" alt="Photo du plat" loading="lazy" decoding="async"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" aria-hidden="true"></div>
+    <section style="position:relative;height:380px;width:100%;overflow:hidden;">
+      <img id="detail-image" style="width:100%;height:100%;object-fit:cover;" src="" alt="Photo du plat" loading="lazy" decoding="async"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top, var(--bg-primary), transparent 50%);" aria-hidden="true"></div>
     </section>
 
-    <div class="px-6 -mt-24 relative z-10 max-w-4xl mx-auto">
-      <div class="glass rounded-lg p-6 md:p-8 shadow-[0_32px_64px_rgba(30,27,19,0.12)]">
+    <div style="padding:0 20px;margin-top:-80px;position:relative;z-index:10;max-width:700px;margin-left:auto;margin-right:auto;">
+      <div class="info-card" style="padding:24px;">
         <!-- Product Info -->
-        <div class="flex justify-between items-start mb-4">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px;">
           <div>
-            <h1 id="detail-name" class="text-2xl md:text-3xl font-extrabold font-headline text-on-surface tracking-tight mb-1"></h1>
-            <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-surface-tint text-sm" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">star</span>
-              <span id="detail-rating" class="text-sm font-bold"></span>
-              <span class="text-xs text-on-surface-variant">•</span>
-              <span id="detail-orders-text" class="text-xs text-on-surface-variant"></span>
+            <h1 id="detail-name" style="font-size:24px;font-weight:800;margin-bottom:4px;"></h1>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+              <span class="material-symbols-outlined" style="color:#fbbf24;font-size:16px;font-variation-settings:'FILL' 1;" aria-hidden="true">star</span>
+              <span id="detail-rating" style="font-weight:700;"></span>
+              <span style="color:var(--text-muted);">•</span>
+              <span id="detail-orders-text" style="color:var(--text-tertiary);"></span>
             </div>
           </div>
-          <span id="detail-price" class="text-2xl font-extrabold font-headline text-primary"></span>
+          <span id="detail-price" style="font-family:Outfit;font-size:22px;font-weight:800;color:var(--accent);white-space:nowrap;"></span>
         </div>
-        <p id="detail-desc" class="text-on-surface-variant leading-relaxed mb-6 text-sm md:text-base"></p>
+        <p id="detail-desc" style="color:var(--text-secondary);line-height:1.6;font-size:14px;margin-bottom:24px;"></p>
 
-        <!-- Infos rapides -->
-        <div class="grid grid-cols-4 gap-3 mb-6">
-          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
-            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">local_fire_department</span>
-            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Cuisson</span>
-            <span class="font-bold text-xs">Bien cuit</span>
-          </div>
-          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
-            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">pepper</span>
-            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Piment</span>
-            <span class="font-bold text-xs">À part</span>
-          </div>
-          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
-            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">restaurant</span>
-            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Couverts</span>
-            <span class="font-bold text-xs">Inclus</span>
-          </div>
-          <div class="p-3 rounded-lg bg-surface-container/50 flex flex-col items-center gap-1 border border-white/30">
-            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">timer</span>
-            <span class="text-[9px] font-bold uppercase tracking-wider opacity-60">Prépa</span>
-            <span class="font-bold text-xs">~15 min</span>
-          </div>
-        </div>
-
-        <!-- ★ ACCOMPAGNEMENT (remplace "Portion") -->
-        <div class="space-y-4" id="accomp-section">
-          <h3 class="font-headline font-bold text-lg flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary" aria-hidden="true">lunch_dining</span> Choisir un accompagnement
+        <!-- Accompagnement -->
+        <div id="accomp-section">
+          <h3 style="font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+            <span class="material-symbols-outlined" style="color:var(--accent);" aria-hidden="true">lunch_dining</span> Choisir un accompagnement
           </h3>
-          <div class="grid grid-cols-2 gap-3" id="accomp-grid">
-            <!-- Populated by JS -->
-          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;" id="accomp-grid"></div>
+        </div>
+
+        <!-- Note / Customization -->
+        <div style="margin-top:24px;">
+          <h3 style="font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span class="material-symbols-outlined" style="color:var(--accent);" aria-hidden="true">edit_note</span> Personnaliser (Optionnel)
+          </h3>
+          <textarea id="detail-note" placeholder="Ex: Sans oignon, piment à part, bien cuit..." style="width:100%;height:80px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--text-primary);padding:12px;font-family:inherit;font-size:14px;resize:none;transition:border-color 0.3s;"></textarea>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Bottom Action: Quantité + Continuer -->
-  <div class="fixed bottom-0 left-0 w-full z-50 bg-[#fff8ef]/10 backdrop-blur-[20px] shadow-[0_-8px_48px_rgba(30,27,19,0.08)] rounded-t-[2rem] border-t border-white/20 p-6">
-    <div class="max-w-4xl mx-auto flex items-center gap-4">
-      <div class="flex items-center bg-surface-container-highest rounded-full px-3 py-2" role="group" aria-label="Quantité">
-        <button onclick="changeDetailQty(-1)" class="w-10 h-10 flex items-center justify-center text-primary active:scale-75 transition-transform" aria-label="Diminuer"><span class="material-symbols-outlined" aria-hidden="true">remove</span></button>
-        <span id="detail-qty" class="px-4 font-bold text-lg" aria-live="polite">1</span>
-        <button onclick="changeDetailQty(1)" class="w-10 h-10 flex items-center justify-center text-primary active:scale-75 transition-transform" aria-label="Augmenter"><span class="material-symbols-outlined" aria-hidden="true">add</span></button>
+  <!-- Bottom Action -->
+  <div class="glass-heavy" style="position:fixed;bottom:72px;left:0;width:100%;z-index:1001;padding:16px 24px;border-top:1px solid var(--border);box-shadow: 0 -10px 30px rgba(0,0,0,0.2);">
+    <div style="max-width:700px;margin:0 auto;display:flex;align-items:center;gap:16px;">
+      <div class="qty-selector" role="group" aria-label="Quantité">
+        <button onclick="changeDetailQty(-1)" class="qty-btn" aria-label="Diminuer"><span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">remove</span></button>
+        <span id="detail-qty" class="qty-count" aria-live="polite">1</span>
+        <button onclick="changeDetailQty(1)" class="qty-btn add" aria-label="Augmenter"><span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">add</span></button>
       </div>
-      <button onclick="goToCheckout()" id="btn-continue" class="flex-1 bg-primary text-white font-headline font-bold text-lg py-4 rounded-full shadow-[0_16px_32px_rgba(95,22,0,0.3)] hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-3">
-        Continuer
-        <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      <button onclick="goToCheckout(); explodeButton(this);" id="btn-continue" data-type="particles" data-color="#ff6b35" class="btn-primary" style="flex:1;">
+        Ajouter au panier
+        <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">shopping_cart</span>
       </button>
     </div>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 4: PANIER (CART) -->
+<!-- PAGE 4: PANIER (CART)                      -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-cart" class="page">
-  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]">
-    <div class="flex items-center gap-3">
-      <button onclick="navigateTo('shop')" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Retour">
-        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+  <header class="app-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="navigateTo('shop')" class="header-btn" aria-label="Retour">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
       </button>
-      <h1 class="text-xl font-extrabold text-primary tracking-tight font-headline">Mon Panier</h1>
+      <h1 class="header-logo" style="font-size:18px;color:var(--text-primary);">Mon Panier</h1>
     </div>
   </header>
-  <main class="px-6 max-w-2xl mx-auto pb-80 pt-4" role="main">
-    <div class="flex items-baseline justify-between mb-6">
-      <h2 class="text-2xl font-extrabold text-on-surface tracking-tight">Votre Panier</h2>
-      <span id="cart-count-label" class="text-on-surface-variant font-medium text-sm" aria-live="polite">(0 articles)</span>
+
+  <main style="padding:20px;max-width:640px;margin:0 auto;padding-bottom:280px;" role="main">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+      <h2 style="font-size:24px;font-weight:800;">Votre Panier</h2>
+      <span id="cart-count-label" style="font-size:13px;color:var(--text-tertiary);font-weight:600;" aria-live="polite">(0 articles)</span>
     </div>
-    <div id="cart-items-container" class="space-y-4" role="list"></div>
-    <div id="cart-empty" class="hidden flex-col items-center justify-center py-16 text-center">
-      <span class="material-symbols-outlined text-5xl text-outline-variant mb-4" aria-hidden="true">shopping_cart</span>
-      <h3 class="font-headline font-bold text-lg text-on-surface mb-2">Votre panier est vide</h3>
-      <p class="text-on-surface-variant text-sm mb-6">Découvrez notre délicieuse sélection de porc.</p>
-      <button onclick="navigateTo('shop')" class="bg-primary text-white px-8 py-3 rounded-full font-bold active:scale-95 transition-all">Voir le Menu</button>
+    <div id="cart-items-container" style="display:flex;flex-direction:column;gap:12px;" role="list"></div>
+    <div id="cart-empty" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;text-align:center;">
+      <div style="width:72px;height:72px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+        <span class="material-symbols-outlined" style="font-size:32px;color:var(--text-tertiary);" aria-hidden="true">shopping_cart</span>
+      </div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Votre panier est vide</h3>
+      <p style="font-size:14px;color:var(--text-tertiary);margin-bottom:24px;">Découvrez notre délicieuse sélection de porc.</p>
+      <button onclick="navigateTo('shop')" class="btn-primary" style="width:auto;padding:14px 32px;">Voir le Menu</button>
     </div>
   </main>
-  <section id="cart-summary" class="fixed bottom-0 left-0 w-full px-6 pb-8 pt-5 z-40 bg-[#fff8ef]/10 backdrop-blur-[20px] rounded-t-[2rem] border-t border-white/20 shadow-[0_-8px_48px_rgba(30,27,19,0.08)]">
-    <div class="max-w-2xl mx-auto space-y-2">
-      <div class="flex justify-between items-center text-on-surface-variant px-2 text-sm"><span>Sous-total</span><span id="cart-subtotal" class="font-bold">0 FCFA</span></div>
-      <div class="flex justify-between items-center text-on-surface-variant px-2 text-sm"><span>Emballage</span><span class="font-bold">500 FCFA</span></div>
-      <div class="pt-2 mb-3 border-t border-[#1e1b13]/5 flex justify-between items-center px-2">
-        <span class="text-lg font-extrabold text-on-surface">Total</span>
-        <span id="cart-total" class="text-xl font-extrabold text-primary" aria-live="polite">500 FCFA</span>
+
+  <section id="cart-summary" class="glass-heavy" style="position:fixed;bottom:0;left:0;width:100%;padding:20px 24px calc(env(safe-area-inset-bottom,8px) + 20px);z-index:40;border-top:1px solid var(--border);">
+    <div style="max-width:640px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;font-size:14px;color:var(--text-secondary);margin-bottom:6px;"><span>Sous-total</span><span id="cart-subtotal" style="font-weight:700;">0 FCFA</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;color:var(--text-secondary);margin-bottom:12px;"><span>Emballage</span><span style="font-weight:700;">500 FCFA</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border);margin-bottom:16px;">
+        <span style="font-size:16px;font-weight:800;">Total</span>
+        <span id="cart-total" style="font-family:Outfit;font-size:22px;font-weight:800;color:var(--accent);" aria-live="polite">500 FCFA</span>
       </div>
-      <button onclick="navigateTo('checkout')" class="w-full bg-primary text-white py-4 rounded-full font-bold text-lg shadow-[0_12px_24px_rgba(95,22,0,0.25)] active:scale-95 transition-all flex items-center justify-center gap-3">
-        <span>Passer la commande</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      <button onclick="navigateTo('checkout')" class="btn-primary">
+        <span>Passer la commande</span>
+        <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">arrow_forward</span>
       </button>
     </div>
   </section>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 5: CHECKOUT — Infos Client -->
+<!-- PAGE 5: CHECKOUT                           -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-checkout" class="page">
-  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-[#fff8ef]/80 backdrop-blur-[20px] shadow-[0_4px_32px_rgba(30,27,19,0.06)]">
-    <div class="flex items-center gap-3">
-      <button onclick="navigateTo('cart')" class="p-2 rounded-full hover:bg-surface-container/50 transition-colors" aria-label="Retour">
-        <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_back</span>
+  <header class="app-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="navigateTo('cart')" class="header-btn" aria-label="Retour">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
       </button>
-      <h1 class="text-xl font-extrabold text-primary tracking-tight font-headline">Finaliser</h1>
+      <h1 class="header-logo" style="font-size:18px;color:var(--text-primary);">Finaliser</h1>
+    </div>
+    <div style="font-size:12px;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:4px;">
+      <span class="material-symbols-outlined" style="font-size:14px;">timer</span> ~45-60 min
     </div>
   </header>
-  <main class="pb-20 px-6 max-w-2xl mx-auto space-y-6 pt-4" role="main">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-extrabold font-headline">Vos Informations</h2>
-      <div class="text-right"><p class="text-xs text-primary font-bold">Livraison ~45-60 min</p></div>
-    </div>
 
-    <!-- Formulaire client -->
-    <section class="space-y-4">
-      <div class="glass p-5 rounded-lg flex flex-col gap-3">
-        <div><label for="cust-name" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Nom et Prénoms *</label>
-        <input type="text" id="cust-name" placeholder="Ex: Kouakou Aman" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="name"></div>
-        <div><label for="cust-phone" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Téléphone *</label>
-        <input type="tel" id="cust-phone" placeholder="Ex: 07 00 00 00 00" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="tel"></div>
-        <div><label for="cust-quartier" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Quartier / Commune *</label>
-        <input type="text" id="cust-quartier" placeholder="Ex: Cocody Riviera" required class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium" autocomplete="address-level2"></div>
-        <div><label for="cust-details" class="text-xs font-bold text-on-surface-variant ml-1 mb-1 block">Précisions pour le livreur</label>
-        <textarea id="cust-details" placeholder="Croisement, repère, couleur du bâtiment..." rows="2" class="w-full bg-white/40 border border-white/20 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 font-medium resize-none" autocomplete="street-address"></textarea></div>
-      </div>
-    </section>
+  <main style="padding:20px;max-width:640px;margin:0 auto;padding-bottom:40px;" role="main">
+    <h2 style="font-size:24px;font-weight:800;margin-bottom:24px;">Vos Informations</h2>
 
-    <!-- Moyen de paiement -->
-    <section class="space-y-3">
-      <h3 class="font-headline font-bold text-lg text-tertiary px-1">Moyen de paiement</h3>
-      <div class="grid grid-cols-1 gap-2" role="radiogroup">
-        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
-          <input checked name="payment" type="radio" class="hidden" value="wave"/>
-          <div class="w-10 h-10 bg-[#0000ff]/10 rounded-lg flex items-center justify-center"><span class="font-black text-lg text-[#0000ff]" style="font-family:Arial">wave</span></div>
-          <div class="flex-1"><p class="font-bold text-sm">Wave</p><p class="text-xs text-on-surface-variant">Rapide et sécurisé</p></div>
-        </label>
-        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
-          <input name="payment" type="radio" class="hidden" value="orange_money"/>
-          <div class="w-10 h-10 bg-[#ff6600]/10 rounded-lg flex items-center justify-center"><span class="font-bold text-lg text-[#ff6600]">OM</span></div>
-          <div class="flex-1"><p class="font-bold text-sm">Orange Money</p></div>
-        </label>
-        <label class="glass p-4 rounded-lg flex items-center gap-4 cursor-pointer border-2 border-transparent has-[:checked]:border-surface-tint has-[:checked]:bg-white/60 transition-all">
-          <input name="payment" type="radio" class="hidden" value="cash"/>
-          <div class="w-10 h-10 bg-white/80 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-surface" aria-hidden="true">payments</span></div>
-          <div class="flex-1"><p class="font-bold text-sm">Espèces à la livraison</p></div>
-        </label>
-      </div>
-    </section>
+    <!-- Form -->
+    <section class="info-card" style="margin-bottom:24px;">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div><label for="cust-name" class="form-label">Nom et Prénoms *</label>
+        <input type="text" id="cust-name" placeholder="Ex: Kouakou Aman" required class="form-field" autocomplete="name"></div>
+        <div><label for="cust-phone" class="form-label">Téléphone *</label>
+        <input type="tel" id="cust-phone" placeholder="Ex: 07 00 00 00 00" required class="form-field" autocomplete="tel"></div>
+        <!-- Commune -->
+        <div>
+          <label for="cust-commune" class="form-label">Commune (Abidjan) *</label>
+          <div style="position:relative;">
+            <select id="cust-commune" required class="form-field" style="appearance:none; padding-right:40px; cursor:pointer;" onchange="updateQuartiers()">
+              <option value="" disabled selected>Sélectionnez votre commune</option>
+              <option value="Abobo">Abobo</option>
+              <option value="Adjamé">Adjamé</option>
+              <option value="Attécoubé">Attécoubé</option>
+              <option value="Bingerville">Bingerville</option>
+              <option value="Cocody">Cocody</option>
+              <option value="Koumassi">Koumassi</option>
+              <option value="Marcory">Marcory</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Port-Bouët">Port-Bouët</option>
+              <option value="Treichville">Treichville</option>
+              <option value="Yopougon">Yopougon</option>
+            </select>
+            <span class="material-symbols-outlined" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--text-tertiary);">expand_more</span>
+          </div>
+        </div>
 
-    <!-- Récapitulatif -->
-    <section class="space-y-3">
-      <h3 class="font-headline font-bold text-lg text-tertiary px-1">Récapitulatif</h3>
-      <div class="glass p-5 rounded-lg space-y-3">
-        <div id="checkout-items" class="space-y-3"></div>
-        <div class="flex justify-between text-base font-bold pt-3 border-t border-white/20">
-          <span class="text-on-surface">Total à payer</span>
-          <span id="checkout-total" class="text-primary text-lg" aria-live="polite">0 FCFA</span>
+        <!-- Quartier -->
+        <div>
+          <label for="cust-quartier" class="form-label">Quartier *</label>
+          <div style="position:relative;">
+            <select id="cust-quartier" required class="form-field" style="appearance:none; padding-right:40px; cursor:pointer;" disabled>
+              <option value="" disabled selected>Sélectionnez d'abord la commune</option>
+            </select>
+            <span class="material-symbols-outlined" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--text-tertiary);">expand_more</span>
+          </div>
+        </div>
+
+        <!-- Indications -->
+        <div>
+          <label for="cust-details" class="form-label">Indications pour le livreur (Optionnel)</label>
+          <textarea id="cust-details" placeholder="Ex: Croisement, pharmacie, couleur de portail..." rows="2" class="form-field" style="resize:none;" autocomplete="street-address"></textarea>
         </div>
       </div>
     </section>
 
-    <button onclick="placeOrder()" class="w-full bg-surface-tint text-white py-5 rounded-full font-bold text-lg shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+    <!-- Payment -->
+    <section style="margin-bottom:24px;">
+      <p class="section-title">Moyen de paiement</p>
+      <div style="display:flex;flex-direction:column;gap:10px;" role="radiogroup">
+        <label class="payment-option">
+          <input checked name="payment" type="radio" value="wave"/>
+          <div class="payment-icon" style="background:rgba(0,0,255,0.08);color:#3b82f6;">wave</div>
+          <div style="flex:1;"><p style="font-weight:700;font-size:14px;">Wave</p><p style="font-size:12px;color:var(--text-tertiary);">Rapide et sécurisé</p></div>
+        </label>
+        <label class="payment-option">
+          <input name="payment" type="radio" value="orange_money"/>
+          <div class="payment-icon" style="background:rgba(255,102,0,0.08);color:#f97316;">OM</div>
+          <div style="flex:1;"><p style="font-weight:700;font-size:14px;">Orange Money</p><p style="font-size:12px;color:var(--text-tertiary);">Mobile Money</p></div>
+        </label>
+        <label class="payment-option">
+          <input name="payment" type="radio" value="cash"/>
+          <div class="payment-icon" style="background:var(--accent-subtle);">
+            <span class="material-symbols-outlined" style="color:var(--accent);" aria-hidden="true">payments</span>
+          </div>
+          <div style="flex:1;"><p style="font-weight:700;font-size:14px;">Espèces à la livraison</p><p style="font-size:12px;color:var(--text-tertiary);">Payer au livreur</p></div>
+        </label>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section style="margin-bottom:24px;">
+      <p class="section-title">Récapitulatif</p>
+      <div class="info-card">
+        <div id="checkout-items" style="display:flex;flex-direction:column;gap:12px;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:14px;border-top:1px solid var(--border);">
+          <span style="font-weight:800;font-size:15px;">Total à payer</span>
+          <span id="checkout-total" style="font-family:Outfit;font-weight:800;font-size:20px;color:var(--accent);" aria-live="polite">0 FCFA</span>
+        </div>
+      </div>
+    </section>
+
+    <button onclick="placeOrder(); explodeButton(this);" data-type="confetti" class="btn-primary" style="margin-bottom:40px;">
       <span>Valider la commande</span>
-      <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+      <span class="material-symbols-outlined" style="font-size:20px;" aria-hidden="true">check_circle</span>
     </button>
   </main>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 6: COMMANDE CONFIRMÉE -->
+<!-- PAGE 6: COMMANDE CONFIRMÉE                 -->
 <!-- ═══════════════════════════════════════════ -->
 <div id="page-success" class="page">
-  <main class="min-h-screen flex flex-col items-center justify-center px-8 text-center" role="main">
-    <div class="order-success-icon w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mb-6">
-      <span class="material-symbols-outlined text-success" style="font-size: 56px; font-variation-settings: 'FILL' 1;">check_circle</span>
+  <main class="mesh-bg" style="min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;" role="main">
+    <div class="order-success-icon" style="width:88px;height:88px;border-radius:50%;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:28px;">
+      <span class="material-symbols-outlined" style="font-size:48px;color:var(--success);font-variation-settings:'FILL' 1;">check_circle</span>
     </div>
-    <h1 class="font-headline text-3xl font-extrabold text-on-surface mb-3">Commande Envoyée !</h1>
-    <p class="text-on-surface-variant text-base max-w-sm mb-2">Votre commande <strong id="success-order-id"></strong> a bien été enregistrée.</p>
-    <p class="text-on-surface-variant text-sm max-w-sm mb-8">Vous recevrez une confirmation par WhatsApp une fois votre commande validée par notre équipe.</p>
-    <div class="glass p-5 rounded-lg w-full max-w-sm mb-8">
-      <div class="flex justify-between items-center mb-3"><span class="text-on-surface-variant text-sm">Total</span><span id="success-total" class="font-extrabold text-primary text-lg"></span></div>
-      <div class="flex justify-between items-center"><span class="text-on-surface-variant text-sm">Livraison estimée</span><span class="font-bold text-sm">45 — 60 min</span></div>
+    <h1 style="font-size:28px;font-weight:800;margin-bottom:12px;">Commande Envoyée !</h1>
+    <p style="color:var(--text-secondary);font-size:15px;max-width:320px;margin-bottom:8px;">Votre commande <strong id="success-order-id"></strong> a bien été enregistrée.</p>
+    <p style="color:var(--text-tertiary);font-size:13px;max-width:320px;margin-bottom:32px;">Vous recevrez une confirmation par WhatsApp une fois votre commande validée.</p>
+    <div class="info-card-glow" style="width:100%;max-width:340px;margin-bottom:32px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><span style="color:var(--text-tertiary);font-size:14px;">Total</span><span id="success-total" style="font-weight:800;font-size:18px;color:var(--accent);"></span></div>
+      <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-tertiary);font-size:14px;">Livraison estimée</span><span style="font-weight:700;font-size:14px;">45 — 60 min</span></div>
     </div>
-    <button onclick="navigateTo('shop')" class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg active:scale-95 transition-all">Nouvelle commande</button>
+    <button onclick="navigateTo('shop')" class="btn-primary" style="max-width:340px;margin-bottom:16px;">Nouvelle commande</button>
+    <button onclick="navigateTo('tracking')" style="font-size:14px;font-weight:700;color:var(--accent);">Suivre ma commande →</button>
   </main>
 </div>
 
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 7: COMMANDES + SUIVI                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="page-tracking" class="page">
+  <header class="app-header" role="banner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="trackingBack()" class="header-btn" aria-label="Retour">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+      </button>
+      <h1 id="tracking-title" class="header-logo" style="font-size:18px;color:var(--text-primary);">Mes Commandes</h1>
+    </div>
+    <button onclick="toggleDarkMode()" class="header-btn dark-toggle" aria-label="Changer le thème">
+      <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+    </button>
+  </header>
+
+  <main style="padding:20px;max-width:640px;margin:0 auto;padding-bottom:120px;" role="main">
+    <!-- LIST VIEW -->
+    <div id="orders-list-view">
+      <div class="search-box" style="margin-bottom:20px;">
+        <span class="material-symbols-outlined" style="color:var(--text-tertiary);" aria-hidden="true">search</span>
+        <input id="order-search-input" oninput="filterOrders()" placeholder="Rechercher par n° de commande..." type="search" aria-label="Rechercher une commande"/>
+      </div>
+
+      <!-- Stats -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+        <div class="info-card" style="text-align:center;padding:16px;">
+          <span id="stat-active" style="font-family:Outfit;font-size:24px;font-weight:800;color:var(--accent);">0</span>
+          <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-top:4px;">En cours</p>
+        </div>
+        <div class="info-card" style="text-align:center;padding:16px;">
+          <span id="stat-delivered" style="font-family:Outfit;font-size:24px;font-weight:800;color:var(--success);">0</span>
+          <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-top:4px;">Livrées</p>
+        </div>
+        <div class="info-card" style="text-align:center;padding:16px;">
+          <span id="stat-total-orders" style="font-family:Outfit;font-size:24px;font-weight:800;color:var(--text-primary);">0</span>
+          <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-top:4px;">Total</p>
+        </div>
+      </div>
+      </div>
+
+      <div id="orders-list-container" style="display:flex;flex-direction:column;gap:12px;"></div>
+
+      <div id="orders-empty" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;text-align:center;">
+        <div style="width:72px;height:72px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="font-size:32px;color:var(--text-tertiary);" aria-hidden="true">receipt_long</span>
+        </div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Aucune commande</h3>
+        <p style="font-size:14px;color:var(--text-tertiary);margin-bottom:24px;">Vos commandes apparaîtront ici.</p>
+        <button onclick="navigateTo('shop')" class="btn-primary" style="width:auto;padding:14px 32px;">Voir le Menu</button>
+      </div>
+    </div>
+
+    <!-- DETAIL VIEW -->
+    <div id="order-detail-view" style="display:none;">
+      <!-- Order Info -->
+      <div class="info-card" style="margin-bottom:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px;">
+          <div>
+            <h2 id="detail-order-id" style="font-size:18px;font-weight:800;color:var(--accent);"></h2>
+            <p id="detail-order-date" style="font-size:12px;color:var(--text-tertiary);margin-top:4px;"></p>
+          </div>
+          <span id="detail-status-pill" class="status-pill"></span>
+        </div>
+
+        <!-- ETA -->
+        <div id="detail-eta-section" class="info-card-glow" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+          <div>
+            <p style="font-size:12px;color:var(--text-tertiary);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Temps Estimé</p>
+            <p style="font-family:Outfit;font-size:36px;font-weight:900;color:var(--accent);line-height:1;margin-top:4px;">
+              <span id="detail-eta">—</span> <span style="font-size:16px;font-weight:700;opacity:0.6;">min</span>
+            </p>
+          </div>
+          <div style="width:56px;height:56px;border-radius:var(--radius-md);background:var(--accent-subtle);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:28px;font-variation-settings:'FILL' 1;">timer</span>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="info-card" style="margin-bottom:20px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;position:relative;width:100%;" id="horizontal-timeline">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2;width:40px;">
+              <div id="ts-1-icon" style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 0 15px var(--accent-glow);transition:all 0.3s;">
+                <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">check</span>
+              </div>
+              <span id="ts-1-label" style="font-weight:700;font-size:10px;color:var(--accent);white-space:nowrap;">Confirmée</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;z-index:1;margin:0 -4px;"><div style="height:3px;width:100%;background:var(--border);border-radius:99px;position:relative;overflow:hidden;"><div id="tl-line-1" style="position:absolute;left:0;top:0;height:100%;width:100%;background:var(--accent);transition:width 0.7s ease;"></div></div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2;width:40px;">
+              <div id="ts-2-icon" style="width:40px;height:40px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);transition:all 0.3s;">
+                <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">restaurant</span>
+              </div>
+              <span id="ts-2-label" style="font-weight:700;font-size:10px;color:var(--text-tertiary);white-space:nowrap;">Préparation</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;z-index:1;margin:0 -4px;"><div style="height:3px;width:100%;background:var(--border);border-radius:99px;position:relative;overflow:hidden;"><div id="tl-line-2" style="position:absolute;left:0;top:0;height:100%;width:0;background:var(--accent);transition:width 0.7s ease;"></div></div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2;width:40px;">
+              <div id="ts-3-icon" style="width:40px;height:40px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);transition:all 0.3s;">
+                <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">moped</span>
+              </div>
+              <span id="ts-3-label" style="font-weight:700;font-size:10px;color:var(--text-tertiary);white-space:nowrap;">Livraison</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;z-index:1;margin:0 -4px;"><div style="height:3px;width:100%;background:var(--border);border-radius:99px;position:relative;overflow:hidden;"><div id="tl-line-3" style="position:absolute;left:0;top:0;height:100%;width:0;background:var(--accent);transition:width 0.7s ease;"></div></div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2;width:40px;">
+              <div id="ts-4-icon" style="width:40px;height:40px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);transition:all 0.3s;">
+                <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">done_all</span>
+              </div>
+              <span id="ts-4-label" style="font-weight:700;font-size:10px;color:var(--text-tertiary);white-space:nowrap;">Livrée</span>
+            </div>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-subtle);border:1px solid var(--border-accent);border-radius:var(--radius-full);padding:8px 16px;margin-top:16px;">
+            <span id="detail-pulse" style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:breathe 2s ease infinite;flex-shrink:0;"></span>
+            <span id="detail-status-msg" style="font-size:12px;font-weight:700;color:var(--accent);">Mise à jour en cours...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div class="info-card" style="margin-bottom:20px;">
+        <h3 style="font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <span class="material-symbols-outlined" style="color:var(--accent);font-size:18px;" aria-hidden="true">receipt</span> Articles
+        </h3>
+        <div id="detail-items-list" style="display:flex;flex-direction:column;gap:12px;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:14px;border-top:1px solid var(--border);">
+          <span style="font-weight:700;font-size:14px;color:var(--text-secondary);">Total</span>
+          <span id="detail-total" style="font-family:Outfit;font-weight:800;font-size:18px;color:var(--accent);"></span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div id="detail-actions">
+        <button id="btn-reorder" onclick="reorderFromDetail()" class="btn-primary" style="display:none;">
+          <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">replay</span> Re-commander
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navigation">
+    <button onclick="navigateTo('welcome')" class="nav-item"><span class="material-symbols-outlined" aria-hidden="true">home</span><span>Accueil</span></button>
+    <button onclick="navigateTo('shop')" class="nav-item"><span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span><span>Menu</span></button>
+    <button onclick="navigateTo('tracking')" class="nav-item active"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;" aria-hidden="true">receipt_long</span><span>Commandes</span></button>
+    <button onclick="navigateTo('cart')" class="nav-item" style="position:relative;">
+      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span><span>Panier</span>
+      <span id="cart-badge-nav2" class="cart-count" style="display:none;top:-2px;right:4px;">0</span>
+    </button>
+  </nav>
+</div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- JAVASCRIPT -->
+<!-- JAVASCRIPT                                  -->
 <!-- ═══════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.42.0/dist/umd/supabase.js"></script>
 <script>
+const supabaseUrl = 'https://ddrjiaxonvfsnzpdkyfp.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkcmppYXhvbnZmc256cGRreWZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NzAzNTcsImV4cCI6MjA5MjM0NjM1N30.dpAryd0ybBWcDy-PQVhJkqRQuTiLk-_a4i1xqg-NXBo';
+let supabase;
+try {
+  supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+} catch (err) {
+  console.error("Supabase Init Error:", err);
+}
+
 // ─── HTML Escape ──────────────────────────────
 function escapeHTML(str) { const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
+
+// ─── Dark Mode Toggle ─────────────────────────
+function toggleDarkMode() {
+  const html = document.documentElement;
+  html.classList.toggle('dark');
+  const isDark = html.classList.contains('dark');
+  localStorage.setItem('chariow_dark', isDark ? '1' : '0');
+  document.querySelectorAll('.dark-icon').forEach(icon => {
+    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+  });
+}
+// Restore dark mode on load
+(function() {
+  const saved = localStorage.getItem('chariow_dark');
+  if (saved === '0') {
+    document.documentElement.classList.remove('dark');
+    setTimeout(() => {
+      document.querySelectorAll('.dark-icon').forEach(icon => { icon.textContent = 'dark_mode'; });
+    }, 100);
+  } else {
+    // Default dark
+    document.documentElement.classList.add('dark');
+    setTimeout(() => {
+      document.querySelectorAll('.dark-icon').forEach(icon => { icon.textContent = 'light_mode'; });
+    }, 100);
+  }
+})();
+
+// ─── Tracking System ──────────────────────────
+let trackingInterval = null;
+let currentDetailOrderId = null;
+
+async function getMyOrders() {
+  let myIds = [];
+  try { myIds = JSON.parse(localStorage.getItem('chariow_my_orders') || '[]'); } catch(e) {}
+  if (myIds.length === 0) return [];
+  const { data, error } = await supabase.from('orders').select('*').in('id', myIds).order('created_at', { ascending: false });
+  if (error) { console.error('Erreur getMyOrders:', error); return []; }
+  return data.map(o => ({...o, date: o.created_at, serviceFee: o.service_fee}));
+}
+
+function getStatusInfo(status) {
+  const map = {
+    en_attente:   { label: 'En attente',    color: 'background:rgba(245,158,11,0.12);color:#f59e0b;', icon: 'schedule',    step: 1, eta: '45–60', msg: 'Le chef vérifie votre commande...' },
+    validee:      { label: 'En préparation', color: 'background:rgba(59,130,246,0.12);color:#3b82f6;', icon: 'restaurant',  step: 2, eta: '20–30', msg: 'Le porc est sur le gril 🔥...' },
+    en_livraison: { label: 'En livraison',   color: 'background:rgba(168,85,247,0.12);color:#a855f7;', icon: 'two_wheeler', step: 3, eta: '10–15', msg: 'Votre livreur est en route 🛵...' },
+    livree:       { label: 'Livrée ✓',       color: 'background:rgba(34,197,94,0.12);color:#22c55e;',  icon: 'check_circle',step: 4, eta: '0',     msg: 'Commande livrée. Bon appétit ! 🎉' }
+  };
+  return map[status] || map.en_attente;
+}
+
+function formatDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+async function renderOrdersList() {
+  const orders = await getMyOrders();
+  const container = document.getElementById('orders-list-container');
+  const emptyEl = document.getElementById('orders-empty');
+  const searchVal = (document.getElementById('order-search-input')?.value || '').toLowerCase();
+
+  const active = orders.filter(o => o.status !== 'livree').length;
+  const delivered = orders.filter(o => o.status === 'livree').length;
+  document.getElementById('stat-active').textContent = active;
+  document.getElementById('stat-delivered').textContent = delivered;
+  document.getElementById('stat-total-orders').textContent = orders.length;
+
+  const filtered = searchVal ? orders.filter(o => o.id.toLowerCase().includes(searchVal)) : orders;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '';
+    emptyEl.style.display = 'flex';
+    return;
+  }
+  emptyEl.style.display = 'none';
+
+  container.innerHTML = filtered.map((order, i) => {
+    const info = getStatusInfo(order.status);
+    const itemCount = order.items.reduce((s, it) => s + it.qty, 0);
+    const itemNames = order.items.map(it => it.name).join(', ');
+    return `
+      <div class="info-card" style="cursor:pointer;transition:all 0.3s;animation:slideUp 0.4s ${i * 0.06}s both;" onclick="openOrderDetail('${escapeHTML(order.id)}')" role="listitem" onmouseenter="this.style.borderColor='var(--border-accent)'" onmouseleave="this.style.borderColor='var(--border)'">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px;">
+          <div>
+            <h3 style="font-weight:800;font-size:15px;">#${escapeHTML(order.id.split('-')[1] || order.id)}</h3>
+            <p style="font-size:11px;color:var(--text-tertiary);margin-top:2px;">${formatDate(order.date)}</p>
+          </div>
+          <span class="status-pill" style="${info.color}">${info.label}</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <p style="font-size:12px;color:var(--text-tertiary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%;">${escapeHTML(itemNames)} <strong>(${itemCount})</strong></p>
+          <span style="font-family:Outfit;font-weight:800;font-size:14px;color:var(--accent);">${order.total.toLocaleString()} F</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function filterOrders() { renderOrdersList(); }
+
+function openOrderDetail(orderId) {
+  currentDetailOrderId = orderId;
+  document.getElementById('orders-list-view').style.display = 'none';
+  document.getElementById('order-detail-view').style.display = 'block';
+  document.getElementById('tracking-title').textContent = 'Suivi de Commande';
+  updateOrderDetail();
+  if (trackingInterval) clearInterval(trackingInterval);
+  trackingInterval = setInterval(updateOrderDetail, 5000);
+}
+
+async function updateOrderDetail() {
+  if (!currentDetailOrderId) return;
+  const { data, error } = await supabase.from('orders').select('*').eq('id', currentDetailOrderId).single();
+  if (error || !data) return;
+  const order = {...data, date: data.created_at, serviceFee: data.service_fee};
+  const info = getStatusInfo(order.status);
+
+  document.getElementById('detail-order-id').textContent = '#' + (order.id.split('-')[1] || order.id);
+  document.getElementById('detail-order-date').textContent = formatDate(order.date);
+  document.getElementById('detail-status-pill').textContent = info.label;
+  document.getElementById('detail-status-pill').setAttribute('style', info.color);
+
+  const etaSection = document.getElementById('detail-eta-section');
+  if (order.status === 'livree') { etaSection.style.display = 'none'; }
+  else { etaSection.style.display = 'flex'; document.getElementById('detail-eta').textContent = info.eta; }
+
+  const step = info.step;
+  for (let i = 1; i <= 4; i++) {
+    const icon = document.getElementById(`ts-${i}-icon`);
+    const label = document.getElementById(`ts-${i}-label`);
+    if (i <= step) {
+      icon.style.cssText = 'width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 0 15px var(--accent-glow);transform:scale(1.1);transition:all 0.3s;';
+      if (label) label.style.color = 'var(--accent)';
+    } else {
+      icon.style.cssText = 'width:40px;height:40px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);transform:scale(1);transition:all 0.3s;';
+      if (label) label.style.color = 'var(--text-tertiary)';
+    }
+  }
+  if(document.getElementById('tl-line-1')) document.getElementById('tl-line-1').style.width = step >= 2 ? '100%' : '0%';
+  if(document.getElementById('tl-line-2')) document.getElementById('tl-line-2').style.width = step >= 3 ? '100%' : '0%';
+  if(document.getElementById('tl-line-3')) document.getElementById('tl-line-3').style.width = step >= 4 ? '100%' : '0%';
+
+  document.getElementById('detail-status-msg').textContent = info.msg;
+  const pulse = document.getElementById('detail-pulse');
+  if (order.status === 'livree') {
+    pulse.style.background = 'var(--success)';
+    pulse.style.animation = 'none';
+  } else {
+    pulse.style.background = 'var(--accent)';
+    pulse.style.animation = 'breathe 2s ease infinite';
+  }
+
+  const itemsList = document.getElementById('detail-items-list');
+  itemsList.innerHTML = order.items.map(item => `
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0;">
+          <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/>
+        </div>
+        <div>
+          <p style="font-weight:700;font-size:13px;">${escapeHTML(item.name)} × ${item.qty}</p>
+          ${item.accomp ? `<p style="font-size:11px;color:var(--accent);">+ ${escapeHTML(item.accomp.name)}</p>` : ''}
+        </div>
+      </div>
+      <span style="font-weight:700;font-size:13px;color:var(--text-secondary);">${((item.totalPrice || item.price) * item.qty).toLocaleString()} F</span>
+    </div>
+  `).join('');
+  document.getElementById('detail-total').textContent = order.total.toLocaleString() + ' FCFA';
+
+  const reorderBtn = document.getElementById('btn-reorder');
+  reorderBtn.style.display = order.status === 'livree' ? 'flex' : 'none';
+}
+
+async function reorderFromDetail() {
+  if (!currentDetailOrderId) return;
+  const { data: order, error } = await supabase.from('orders').select('*').eq('id', currentDetailOrderId).single();
+  if (error || !order) return;
+  order.items.forEach(item => {
+    const product = products.find(p => p.name === item.name);
+    if (product) { cart.push({ ...product, qty: item.qty, accomp: item.accomp || null, totalPrice: item.totalPrice || item.price }); }
+  });
+  updateBadges();
+  showToast('Articles ajoutés au panier! 🛒');
+  navigateTo('cart');
+}
+
+function trackingBack() {
+  const detailView = document.getElementById('order-detail-view');
+  if (detailView.style.display !== 'none') {
+    detailView.style.display = 'none';
+    document.getElementById('orders-list-view').style.display = 'block';
+    document.getElementById('tracking-title').textContent = 'Mes Commandes';
+    currentDetailOrderId = null;
+    if (trackingInterval) { clearInterval(trackingInterval); trackingInterval = null; }
+    renderOrdersList();
+  } else {
+    navigateTo('shop');
+  }
+}
+
+function renderTracking() {
+  document.getElementById('orders-list-view').style.display = 'block';
+  document.getElementById('order-detail-view').style.display = 'none';
+  document.getElementById('tracking-title').textContent = 'Mes Commandes';
+  currentDetailOrderId = null;
+  if (trackingInterval) { clearInterval(trackingInterval); trackingInterval = null; }
+  renderOrdersList();
+}
+
 
 // ─── Data ─────────────────────────────────────
 const products = [
@@ -576,27 +1610,45 @@ function startPromoTimer() {
   const saved = localStorage.getItem('chariow_promo_end');
   if (saved) { const r = Math.floor((parseInt(saved) - Date.now()) / 1000); if (r > 0) totalSeconds = r; }
   else localStorage.setItem('chariow_promo_end', Date.now() + totalSeconds * 1000);
-  const el = document.getElementById('promo-countdown');
-  if (!el) return;
+  const els = document.querySelectorAll('.promo-countdown');
+  if (els.length === 0) return;
   setInterval(() => {
-    if (totalSeconds <= 0) { el.textContent = "Expirée!"; return; }
+    if (totalSeconds <= 0) { els.forEach(el => el.textContent = "Expirée!"); return; }
     totalSeconds--;
     const h = Math.floor(totalSeconds / 3600), m = Math.floor((totalSeconds % 3600) / 60), s = totalSeconds % 60;
-    el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    els.forEach(el => el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`);
   }, 1000);
 }
 
 // ─── Navigation ───────────────────────────────
 function navigateTo(page) {
+  // Masquer toutes les pages et activer la cible
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + page);
-  if (target) { target.classList.add('active'); target.classList.remove('page-transition'); void target.offsetWidth; target.classList.add('page-transition'); }
+  if (target) { 
+    target.classList.add('active'); 
+    target.classList.remove('page-transition'); 
+    void target.offsetWidth; 
+    target.classList.add('page-transition'); 
+  }
   window.scrollTo(0, 0);
+
+  // Gérer la visibilité du bouton WhatsApp (visible sur Accueil, Menu et Suivi)
   const waFab = document.getElementById('whatsapp-fab');
-  if (waFab) waFab.style.display = (page === 'welcome' || page === 'shop') ? 'flex' : 'none';
+  const showWa = ['welcome', 'shop', 'tracking'].includes(page);
+  if (waFab) waFab.style.display = showWa ? 'flex' : 'none';
+
+  // Synchroniser l'état actif de TOUTES les barres de navigation
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    const isTarget = btn.getAttribute('onclick')?.includes(`'${page}'`);
+    if (isTarget) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+
   if (page === 'shop') renderProducts();
   if (page === 'cart') renderCart();
   if (page === 'checkout') renderCheckout();
+  if (page === 'tracking') renderTracking();
   updateBadges();
 }
 
@@ -618,23 +1670,24 @@ function renderProducts() {
     return cat && s;
   });
   grid.innerHTML = filtered.map((p, i) => `
-    <div class="product-card group relative bg-surface-container p-4 rounded-lg cursor-pointer" onclick="openDetail(${p.id})" role="listitem" style="animation: slideUp 0.5s ${i * 0.06}s both;">
-      <div class="relative h-48 md:h-56 mb-5 rounded-lg overflow-hidden -mt-6 shadow-xl">
+    <div class="product-card" onclick="openDetail(${p.id})" role="listitem" style="animation: scaleIn 0.4s ${i * 0.06}s both;">
+      <div class="card-image">
         ${getBadgeHTML(p.badge)}
-        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" loading="lazy" decoding="async"/>
+        <img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" loading="lazy" decoding="async"/>
       </div>
-      <div class="px-1">
-        <h4 class="text-lg font-bold font-headline text-on-surface">${escapeHTML(p.name)}</h4>
-        <p class="text-xs text-outline font-medium mb-1">${escapeHTML(p.subtitle)}</p>
-        <div class="flex items-center gap-1 mb-3">
-          <span class="material-symbols-outlined text-surface-tint text-xs" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">star</span>
-          <span class="text-xs font-bold">${p.rating}</span>
-          <span class="text-xs text-outline">• ${p.orders} commandés</span>
+      <div class="card-body">
+        <h4>${escapeHTML(p.name)}</h4>
+        <p class="subtitle">${escapeHTML(p.subtitle)}</p>
+        <div class="rating-row">
+          <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;" aria-hidden="true">star</span>
+          <span style="font-weight:700;">${p.rating}</span>
+          <span style="color:var(--text-muted);">•</span>
+          <span style="color:var(--text-tertiary);">${p.orders} vendus</span>
         </div>
-        <div class="flex justify-between items-center">
-          <span class="text-xl font-extrabold text-primary">${p.price.toLocaleString()} <span class="text-sm">FCFA</span></span>
-          <button onclick="event.stopPropagation(); quickAdd(${p.id})" class="w-11 h-11 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:bg-surface-tint transition-all active:scale-90" aria-label="Ajouter au panier">
-            <span class="material-symbols-outlined text-xl" aria-hidden="true">add_shopping_cart</span>
+        <div class="price-row">
+          <span class="price">${p.price.toLocaleString()} <span>FCFA</span></span>
+          <button onclick="event.stopPropagation(); quickAdd(${p.id}, event)" class="add-btn" aria-label="Ajouter au panier">
+            <span class="material-symbols-outlined" style="font-size:20px;" aria-hidden="true">add</span>
           </button>
         </div>
       </div>
@@ -648,18 +1701,61 @@ function filterCategory(cat) {
   document.querySelectorAll('.cat-btn').forEach(btn => {
     const m = btn.dataset.cat === cat;
     btn.setAttribute('aria-selected', m);
-    btn.className = m ? "cat-btn flex-shrink-0 px-6 py-2.5 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 text-sm" : "cat-btn flex-shrink-0 px-6 py-2.5 bg-surface-container-high text-on-surface-variant rounded-full font-semibold text-sm";
+    btn.classList.toggle('active', m);
   });
   renderProducts();
 }
 
-function quickAdd(id) {
+function quickAdd(id, event) {
   const p = products.find(x => x.id === id);
   if (!p) return;
   const ex = cart.find(c => c.id === id && !c.accomp);
   if (ex) ex.qty += 1; else cart.push({ ...p, qty: 1, accomp: null });
   updateBadges();
   showToast(`${p.name} ajouté au panier 🛒`);
+  if (event) animateAddToCart(event, p.image);
+}
+
+function animateAddToCart(event, imgSrc) {
+  if (!event || !imgSrc) return;
+  const btn = event.currentTarget || event.target;
+  const card = btn.closest('.product-card');
+  const imgEl = card ? card.querySelector('img') : null;
+  const startRect = imgEl ? imgEl.getBoundingClientRect() : btn.getBoundingClientRect();
+
+  let targetIcon = document.getElementById('cart-badge-shop');
+  if (window.innerWidth < 768) {
+    targetIcon = document.getElementById('cart-badge-nav');
+  }
+  const targetRect = targetIcon.getBoundingClientRect();
+  
+  const flyingImg = document.createElement('img');
+  flyingImg.src = imgSrc;
+  flyingImg.className = 'fly-to-cart';
+  flyingImg.style.left = startRect.left + 'px';
+  flyingImg.style.top = startRect.top + 'px';
+  flyingImg.style.width = startRect.width + 'px';
+  flyingImg.style.height = startRect.height + 'px';
+  
+  document.body.appendChild(flyingImg);
+  
+  requestAnimationFrame(() => {
+    flyingImg.style.left = targetRect.left + 'px';
+    flyingImg.style.top = targetRect.top + 'px';
+    flyingImg.style.width = '20px';
+    flyingImg.style.height = '20px';
+    flyingImg.style.opacity = '0.4';
+    flyingImg.style.transform = 'scale(0.2)';
+  });
+  
+  setTimeout(() => {
+    flyingImg.remove();
+    const iconBtn = targetIcon.parentElement;
+    if (iconBtn) {
+      iconBtn.style.animation = 'bounceIn 0.4s';
+      setTimeout(() => { iconBtn.style.animation = ''; }, 400);
+    }
+  }, 600);
 }
 
 // ─── Detail + Accompagnement ──────────────────
@@ -667,7 +1763,7 @@ function openDetail(id) {
   currentProduct = products.find(p => p.id === id);
   if (!currentProduct) return;
   detailQty = 1;
-  selectedAccomp = null;
+  selectedAccomp = [];
 
   document.getElementById('detail-image').src = currentProduct.image;
   document.getElementById('detail-image').alt = currentProduct.name;
@@ -677,8 +1773,10 @@ function openDetail(id) {
   document.getElementById('detail-desc').textContent = currentProduct.desc;
   document.getElementById('detail-orders-text').textContent = `${currentProduct.orders} commandés aujourd'hui`;
   document.getElementById('detail-qty').textContent = '1';
+  
+  const detailNote = document.getElementById('detail-note');
+  if (detailNote) detailNote.value = '';
 
-  // Afficher les accompagnements seulement pour les plats (pas pour accompagnements et boissons)
   const accompSection = document.getElementById('accomp-section');
   const isMainDish = !['accompagnements', 'boissons'].includes(currentProduct.category);
   accompSection.style.display = isMainDish ? 'block' : 'none';
@@ -686,14 +1784,16 @@ function openDetail(id) {
   if (isMainDish) {
     const grid = document.getElementById('accomp-grid');
     grid.innerHTML = accompagnements.map(a => `
-      <div class="accomp-card rounded-xl p-3 bg-surface-container/50 flex flex-col items-center gap-2 border border-white/30" onclick="selectAccomp(${a.id}, this)" id="accomp-${a.id}">
-        <div class="w-full h-20 rounded-lg overflow-hidden">
-          <img src="${escapeHTML(a.image)}" alt="${escapeHTML(a.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+      <div class="accomp-card" onclick="selectAccomp(${a.id}, this)" id="accomp-${a.id}">
+        <div style="width:100%;height:85px;position:relative;">
+          <img src="${escapeHTML(a.image)}" alt="${escapeHTML(a.name)}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async"/>
         </div>
-        <span class="font-bold text-sm text-on-surface">${escapeHTML(a.name)}</span>
-        <span class="text-xs text-primary font-bold">+${a.price.toLocaleString()} FCFA</span>
-        <div class="check-icon absolute top-2 right-2 w-5 h-5 bg-surface-tint rounded-full flex items-center justify-center">
-          <span class="material-symbols-outlined text-white text-xs">check</span>
+        <div style="padding:12px;text-align:center;display:flex;flex-direction:column;gap:4px;">
+          <span style="font-weight:800;font-size:14px;color:var(--text-primary);line-height:1.2;">${escapeHTML(a.name)}</span>
+          <span style="font-size:13px;font-weight:700;color:var(--accent);">+${a.price.toLocaleString()} FCFA</span>
+        </div>
+        <div class="check-icon" style="position:absolute;top:8px;right:8px;width:26px;height:26px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <span class="material-symbols-outlined" style="font-size:18px;color:white;font-weight:bold;">check</span>
         </div>
       </div>
     `).join('');
@@ -703,10 +1803,14 @@ function openDetail(id) {
 }
 
 function selectAccomp(id, el) {
-  if (selectedAccomp === id) { selectedAccomp = null; el.classList.remove('selected'); return; }
-  selectedAccomp = id;
-  document.querySelectorAll('.accomp-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
+  const index = selectedAccomp.indexOf(id);
+  if (index > -1) { 
+    selectedAccomp.splice(index, 1); 
+    el.classList.remove('selected'); 
+  } else {
+    selectedAccomp.push(id);
+    el.classList.add('selected');
+  }
 }
 
 function changeDetailQty(d) {
@@ -716,22 +1820,27 @@ function changeDetailQty(d) {
 
 function goToCheckout() {
   if (!currentProduct) return;
-  const isMainDish = !['accompagnements', 'boissons'].includes(currentProduct.category);
-
-  // Ajouter le plat au panier
-  const cartKey = currentProduct.id + '-' + (selectedAccomp || 'solo');
+  const orderNote = document.getElementById('detail-note')?.value.trim() || '';
+  const noteHash = orderNote ? '-' + btoa(unescape(encodeURIComponent(orderNote))).substring(0,8) : '';
+  const accKey = selectedAccomp.length > 0 ? selectedAccomp.slice().sort().join(',') : 'solo';
+  const cartKey = currentProduct.id + '-' + accKey + noteHash;
   const existing = cart.find(c => c.cartKey === cartKey);
-  const accompItem = selectedAccomp ? accompagnements.find(a => a.id === selectedAccomp) : null;
+  
+  const accompItems = selectedAccomp.map(id => {
+    const a = accompagnements.find(x => x.id === id);
+    return { name: a.name, price: a.price, image: a.image };
+  });
+
+  const accompTotal = accompItems.reduce((sum, a) => sum + a.price, 0);
 
   if (existing) {
     existing.qty += detailQty;
   } else {
     cart.push({
-      ...currentProduct,
-      cartKey,
-      qty: detailQty,
-      accomp: accompItem ? { name: accompItem.name, price: accompItem.price, image: accompItem.image } : null,
-      totalPrice: currentProduct.price + (accompItem ? accompItem.price : 0)
+      ...currentProduct, cartKey, qty: detailQty,
+      accompons: accompItems,
+      note: orderNote,
+      totalPrice: currentProduct.price + accompTotal
     });
   }
 
@@ -750,33 +1859,34 @@ function renderCart() {
   document.getElementById('cart-count-label').textContent = `(${totalItems} article${totalItems > 1 ? 's' : ''})`;
 
   if (cart.length === 0) {
-    container.innerHTML = ''; emptyEl.classList.remove('hidden'); emptyEl.classList.add('flex');
-    if (summaryEl) summaryEl.classList.add('hidden'); return;
+    container.innerHTML = ''; emptyEl.style.display = 'flex';
+    if (summaryEl) summaryEl.style.display = 'none'; return;
   }
-  emptyEl.classList.add('hidden'); emptyEl.classList.remove('flex');
-  if (summaryEl) summaryEl.classList.remove('hidden');
+  emptyEl.style.display = 'none';
+  if (summaryEl) summaryEl.style.display = 'block';
 
   container.innerHTML = cart.map((item, idx) => `
-    <div class="glass flex items-center p-3 rounded-lg group" role="listitem" style="animation: slideUp 0.4s ${idx * 0.08}s both;">
-      <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-white/20">
-        <img alt="${escapeHTML(item.name)}" class="w-full h-full object-cover" src="${escapeHTML(item.image)}" loading="lazy"/>
+    <div class="cart-item" role="listitem" style="animation: slideUp 0.4s ${idx * 0.08}s both;">
+      <div style="width:56px;height:56px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0;">
+        <img alt="${escapeHTML(item.name)}" style="width:100%;height:100%;object-fit:cover;" src="${escapeHTML(item.image)}" loading="lazy"/>
       </div>
-      <div class="ml-3 flex-grow min-w-0">
-        <div class="flex justify-between items-start">
-          <div class="min-w-0">
-            <h3 class="text-base font-bold text-on-surface truncate">${escapeHTML(item.name)}</h3>
-            ${item.accomp ? `<p class="text-xs text-surface-tint font-semibold">+ ${escapeHTML(item.accomp.name)}</p>` : ''}
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:start;">
+          <div style="min-width:0;">
+            <h3 style="font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHTML(item.name)}</h3>
+            ${item.accompons && item.accompons.length > 0 ? item.accompons.map(a => `<p style="font-size:11px;color:var(--accent);font-weight:600;margin-top:2px;">+ ${escapeHTML(a.name)}</p>`).join('') : ''}
+            ${item.note ? `<p style="font-size:11px;color:var(--text-tertiary);margin-top:4px;font-style:italic;">"${escapeHTML(item.note)}"</p>` : ''}
           </div>
-          <button onclick="removeFromCart(${idx})" class="text-error hover:scale-110 transition-transform p-1 flex-shrink-0" aria-label="Supprimer">
-            <span class="material-symbols-outlined text-lg" aria-hidden="true">delete</span>
+          <button onclick="removeFromCart(${idx})" style="color:var(--error);padding:4px;flex-shrink:0;transition:transform 0.15s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'" aria-label="Supprimer">
+            <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">delete</span>
           </button>
         </div>
-        <div class="flex justify-between items-center mt-2">
-          <span class="text-base font-extrabold text-primary">${((item.totalPrice || item.price) * item.qty).toLocaleString()} FCFA</span>
-          <div class="flex items-center bg-surface-container rounded-full p-0.5 border border-white/20">
-            <button onclick="changeCartQty(${idx}, -1)" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-surface-bright"><span class="material-symbols-outlined text-sm">remove</span></button>
-            <span class="px-2 font-bold text-sm">${item.qty}</span>
-            <button onclick="changeCartQty(${idx}, 1)" class="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white"><span class="material-symbols-outlined text-sm">add</span></button>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <span style="font-family:Outfit;font-size:15px;font-weight:800;color:var(--accent);">${((item.totalPrice || item.price) * item.qty).toLocaleString()} F</span>
+          <div class="qty-selector">
+            <button onclick="changeCartQty(${idx}, -1)" class="qty-btn"><span class="material-symbols-outlined" style="font-size:16px;">remove</span></button>
+            <span class="qty-count">${item.qty}</span>
+            <button onclick="changeCartQty(${idx}, 1)" class="qty-btn add"><span class="material-symbols-outlined" style="font-size:16px;">add</span></button>
           </div>
         </div>
       </div>
@@ -793,37 +1903,101 @@ function updateCartTotals() {
   document.getElementById('cart-total').textContent = (sub + 500).toLocaleString() + ' FCFA';
 }
 
+// ─── User Info Caching ─────────────────────────
+function saveUserInfo() {
+  const info = {
+    name: document.getElementById('cust-name')?.value || '',
+    phone: document.getElementById('cust-phone')?.value || '',
+    commune: document.getElementById('cust-commune')?.value || '',
+    quartier: document.getElementById('cust-quartier')?.value || '',
+    details: document.getElementById('cust-details')?.value || ''
+  };
+  localStorage.setItem('chariow_user_info', JSON.stringify(info));
+}
+
+function restoreUserInfo() {
+  try {
+    const info = JSON.parse(localStorage.getItem('chariow_user_info'));
+    if (!info) return;
+    if (info.name) document.getElementById('cust-name').value = info.name;
+    if (info.phone) document.getElementById('cust-phone').value = info.phone;
+    if (info.commune) {
+      document.getElementById('cust-commune').value = info.commune;
+      updateQuartiers();
+      if (info.quartier) document.getElementById('cust-quartier').value = info.quartier;
+    }
+    if (info.details) document.getElementById('cust-details').value = info.details;
+  } catch(e) {}
+}
+
 // ─── Checkout ─────────────────────────────────
 function renderCheckout() {
   const container = document.getElementById('checkout-items');
   if (!container) return;
+  restoreUserInfo();
   container.innerHTML = cart.map(item => `
-    <div class="flex items-center justify-between pb-3 border-b border-white/20">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden"><img alt="${escapeHTML(item.name)}" class="w-full h-full object-cover" src="${escapeHTML(item.image)}" loading="lazy"/></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:var(--radius-sm);overflow:hidden;"><img alt="${escapeHTML(item.name)}" style="width:100%;height:100%;object-fit:cover;" src="${escapeHTML(item.image)}" loading="lazy"/></div>
         <div>
-          <p class="font-bold text-sm">${escapeHTML(item.name)} × ${item.qty}</p>
-          ${item.accomp ? `<p class="text-xs text-surface-tint">+ ${escapeHTML(item.accomp.name)}</p>` : ''}
+          <p style="font-weight:700;font-size:13px;">${escapeHTML(item.name)} × ${item.qty}</p>
+          ${item.accompons && item.accompons.length > 0 ? item.accompons.map(acc => `<p style="font-size:11px;color:var(--accent);margin-top:2px;">+ ${escapeHTML(acc.name)}</p>`).join('') : ''}
+          ${item.note ? `<p style="font-size:11px;color:var(--text-tertiary);margin-top:4px;font-style:italic;">"${escapeHTML(item.note)}"</p>` : ''}
         </div>
       </div>
-      <p class="font-bold text-sm text-tertiary">${((item.totalPrice || item.price) * item.qty).toLocaleString()} FCFA</p>
+      <p style="font-weight:700;font-size:13px;color:var(--text-secondary);">${((item.totalPrice || item.price) * item.qty).toLocaleString()} F</p>
     </div>
   `).join('');
   const sub = cart.reduce((s, c) => s + (c.totalPrice || c.price) * c.qty, 0);
   document.getElementById('checkout-total').textContent = (sub + 500).toLocaleString() + ' FCFA';
 }
 
-// ─── Place Order → Save locally (admin panel) ─
+// ─── Location Data ───────────────────────────
+const quartiersAbidjan = {
+  "Abobo": ["Docui", "Gare", "Kennedy", "PK18", "Avocatier", "Samaké", "Baoli", "Akeikoi", "Sagbé", "Té", "Autre"],
+  "Adjamé": ["220 Logements", "Bracodi", "Dallas", "Habitat", "Macaci", "Marie Thérèse", "Mirador", "Renault", "Williamsville", "Autre"],
+  "Attécoubé": ["Agban", "Boribana", "Cité Fairmont", "Jérusalem", "Locodjro", "Santé", "Abobodoumé", "Autre"],
+  "Bingerville": ["Akandjé", "Cité Sipim", "Marché", "Cité CIE", "Bregbo", "Gbagba", "Féh Kessé", "Autre"],
+  "Cocody": ["2 Plateaux", "Angré", "Blockhauss", "Cocody Centre", "Danga", "Riviera 2", "Riviera 3", "Riviera 4 / M'Badon", "Riviera Palmeraie", "Riviera Faya", "Attoban", "Autre"],
+  "Koumassi": ["Remblais", "Sicogi", "Sopim", "Progrès", "Divo", "Soweto", "Poto-Poto", "Bia-Sud", "Campement", "Autre"],
+  "Marcory": ["Zone 4", "Bietry", "Marcory Centre", "Remblais", "Sicogi", "Résidentiel", "Aliodan", "Tsf", "Autre"],
+  "Plateau": ["Cité Esculape", "Indénié", "Sorbonne", "Le Commerce", "Autre"],
+  "Port-Bouët": ["Vridi", "Gonzagueville", "Jean Folly", "Adjouffou", "Terre Rouge", "Phare", "Aéroport", "Autre"],
+  "Treichville": ["Arras", "Avenue 8", "Belleville", "Biafra", "Gare de Bassam", "Sicogi", "Zone 3", "Autre"],
+  "Yopougon": ["Andokoi", "Banco", "Bae", "Gesco", "Kouté", "Maroc", "Niangon", "Nouveau Quartier", "Port-Bouët 2", "Selmer", "Sicogi", "Toits Rouges", "Wassakara", "Autre"]
+};
+
+function updateQuartiers() {
+  const commune = document.getElementById("cust-commune").value;
+  const quartierSelect = document.getElementById("cust-quartier");
+  
+  if (commune && quartiersAbidjan[commune]) {
+    quartierSelect.innerHTML = `<option value="" disabled selected>Sélectionnez votre quartier</option>`;
+    quartiersAbidjan[commune].forEach(q => {
+      quartierSelect.innerHTML += `<option value="${q}">${q}</option>`;
+    });
+    quartierSelect.disabled = false;
+  } else {
+    quartierSelect.innerHTML = `<option value="" disabled selected>Sélectionnez d'abord la commune</option>`;
+    quartierSelect.disabled = true;
+  }
+}
+
+// ─── Place Order ──────────────────────────────
 function placeOrder() {
   if (cart.length === 0) { showToast('Votre panier est vide!'); return; }
   const name = document.getElementById('cust-name')?.value?.trim();
   const phone = document.getElementById('cust-phone')?.value?.trim();
-  const quartier = document.getElementById('cust-quartier')?.value?.trim();
+  const commune = document.getElementById('cust-commune')?.value?.trim();
+  const quartierSelect = document.getElementById('cust-quartier')?.value?.trim();
   const details = document.getElementById('cust-details')?.value?.trim() || '';
 
   if (!name) { showToast('Veuillez entrer votre nom'); document.getElementById('cust-name')?.focus(); return; }
   if (!phone || phone.length < 8) { showToast('Veuillez entrer un numéro valide'); document.getElementById('cust-phone')?.focus(); return; }
-  if (!quartier) { showToast('Veuillez indiquer votre quartier'); document.getElementById('cust-quartier')?.focus(); return; }
+  if (!commune) { showToast('Veuillez sélectionner la commune'); document.getElementById('cust-commune')?.focus(); return; }
+  if (!quartierSelect) { showToast('Veuillez sélectionner le quartier'); document.getElementById('cust-quartier')?.focus(); return; }
+  
+  const fullLocation = `${commune} - ${quartierSelect}`;
 
   const paymentEl = document.querySelector('input[name="payment"]:checked');
   const paymentLabels = { wave: 'Wave', orange_money: 'Orange Money', cash: 'Espèces' };
@@ -831,72 +2005,159 @@ function placeOrder() {
 
   const subtotal = cart.reduce((s, c) => s + (c.totalPrice || c.price) * c.qty, 0);
   const total = subtotal + 500;
-
-  // Générer un ID de commande
   const orderId = 'CMD-' + Date.now().toString(36).toUpperCase();
 
-  // Construire l'objet commande
-  const order = {
-    id: orderId,
-    date: new Date().toISOString(),
-    status: 'en_attente', // en_attente → validée → livrée
-    client: { name, phone, quartier, details },
-    payment,
-    items: cart.map(item => ({
-      name: item.name,
-      image: item.image,
-      price: item.price,
-      totalPrice: item.totalPrice || item.price,
-      qty: item.qty,
-      accomp: item.accomp || null
-    })),
-    subtotal,
-    serviceFee: 500,
-    total
+  const orderData = {
+    id: orderId, status: 'en_attente',
+    client: { name, phone, quartier: fullLocation, details }, payment,
+    items: cart.map(item => ({ name: item.name, image: item.image, price: item.price, totalPrice: item.totalPrice || item.price, qty: item.qty, accompons: item.accompons || [], note: item.note || '' })),
+    subtotal, service_fee: 500, total
   };
 
-  // Sauvegarder dans localStorage (accessible par admin.html)
-  let orders = [];
-  try { orders = JSON.parse(localStorage.getItem('chariow_orders') || '[]'); } catch(e) {}
-  orders.unshift(order);
-  localStorage.setItem('chariow_orders', JSON.stringify(orders));
+  saveUserInfo();
 
-  // Afficher confirmation
-  document.getElementById('success-order-id').textContent = orderId;
-  document.getElementById('success-total').textContent = total.toLocaleString() + ' FCFA';
+  const btn = window.event ? window.event.currentTarget : null;
+  if (btn) btn.disabled = true;
 
-  // Vider le panier
-  cart = [];
-  localStorage.removeItem('chariow_cart');
+  (async () => {
+    if (!supabase) {
+      showToast("Erreur: Supabase n'est pas initialisé. Vérifiez votre connexion.");
+      if (btn) btn.disabled = false;
+      return;
+    }
 
-  showToast('Commande enregistrée! ✅');
-  navigateTo('success');
+    try {
+      const { error } = await supabase.from('orders').insert([orderData]);
+      if (error) throw error;
+
+      let myOrders = [];
+      try { myOrders = JSON.parse(localStorage.getItem('chariow_my_orders') || '[]'); } catch(e) {}
+      myOrders.unshift(orderId);
+      localStorage.setItem('chariow_my_orders', JSON.stringify(myOrders));
+
+      document.getElementById('success-order-id').textContent = orderId;
+      document.getElementById('success-total').textContent = total.toLocaleString() + ' FCFA';
+
+      cart = [];
+      updateBadges();
+      localStorage.removeItem('chariow_cart');
+
+      showToast('Commande enregistrée! ✅');
+      celebrate();
+      navigateTo('success');
+    } catch (err) {
+      console.error('Erreur commande:', err);
+      showToast('Erreur lors de la validation.');
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  })();
 }
 
 // ─── Badges ───────────────────────────────────
 function updateBadges() {
   localStorage.setItem('chariow_cart', JSON.stringify(cart));
   const total = cart.reduce((s, c) => s + c.qty, 0);
-  ['cart-badge-shop', 'cart-badge-nav', 'cart-badge-detail'].forEach(id => {
+  ['cart-badge-shop', 'cart-badge-nav', 'cart-badge-detail', 'cart-badge-nav2'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) { el.textContent = total; el.classList.toggle('hidden', total === 0); }
+    if (el) { el.textContent = total; el.style.display = total === 0 ? 'none' : 'flex'; }
   });
 }
 
 // ─── Toast ────────────────────────────────────
 function showToast(msg) {
   const t = document.getElementById('toast'); if (!t) return;
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+  const tText = document.getElementById('toast-text'); if(tText) tText.textContent = msg;
+  t.classList.add('show');
+  t.style.animation = 'islandPulse 0.3s ease';
+  setTimeout(() => { t.style.animation = ''; }, 300);
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
 // ─── Init ─────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => { const s = document.getElementById('splashscreen'); if (s) { s.classList.add('hide'); setTimeout(() => s.remove(), 600); } }, 2200);
-  updateBadges();
-  navigateTo('welcome');
-  startPromoTimer();
+  // Always hide splashscreen after a delay
+  setTimeout(() => {
+    const s = document.getElementById('splashscreen');
+    if (s) { s.classList.add('hide'); setTimeout(() => s.remove(), 600); }
+  }, 2000);
+
+  try {
+    updateBadges();
+    navigateTo('welcome');
+    startPromoTimer();
+  } catch (e) {
+    console.error("Init Error:", e);
+  }
 });
+
+// ─── Cinematic Button Particles ──────────────────
+function explodeButton(btn) {
+  const rect = btn.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const type = btn.dataset.type || 'particles';
+  const color = btn.dataset.color || '#ff6b35';
+  if (type === 'particles') spawnParticles(cx, cy, color);
+  else if (type === 'confetti') spawnConfetti(cx, cy);
+}
+function spawnParticles(cx, cy, color) {
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div'); p.className = 'particle';
+    p.style.background = color; p.style.left = cx + 'px'; p.style.top = cy + 'px';
+    document.body.appendChild(p);
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 40 + Math.random() * 80;
+    const dx = Math.cos(angle) * dist;
+    const dy = Math.sin(angle) * dist - 40;
+    setTimeout(() => { p.style.transform = `translate(${dx}px, ${dy}px) scale(0)`; p.style.opacity = '0'; }, 10);
+    setTimeout(() => p.remove(), 700);
+  }
+}
+function spawnConfetti(cx, cy) {
+  const colors = ['#ff6b35', '#ff8c5a', '#fbbf24', '#8b5cf6', '#06b6d4', '#22c55e'];
+  for (let i = 0; i < 40; i++) {
+    const c = document.createElement('div'); 
+    c.className = 'confetti';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.left = cx + 'px'; 
+    c.style.top = cy + 'px';
+    c.style.width = Math.random() * 8 + 4 + 'px';
+    c.style.height = Math.random() * 8 + 4 + 'px';
+    document.body.appendChild(c);
+    
+    const angle = Math.random() * Math.PI * 2;
+    const velocity = 5 + Math.random() * 15;
+    const dx = Math.cos(angle) * velocity * 10;
+    const dy = Math.sin(angle) * velocity * 10 - 100;
+    const rot = Math.random() * 720;
+    
+    setTimeout(() => { 
+      c.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(0)`; 
+      c.style.opacity = '0'; 
+    }, 10);
+    setTimeout(() => c.remove(), 1200);
+  }
+}
+
+// Celebration plein écran (Style MagicUI)
+function celebrate() {
+  const duration = 3000;
+  const end = Date.now() + duration;
+  
+  const interval = setInterval(() => {
+    if (Date.now() > end) return clearInterval(interval);
+    
+    // Explosion à gauche
+    spawnConfetti(0, window.innerHeight * 0.7);
+    // Explosion à droite
+    spawnConfetti(window.innerWidth, window.innerHeight * 0.7);
+    // Explosion au centre
+    if (Math.random() > 0.5) {
+      spawnConfetti(window.innerWidth / 2, window.innerHeight * 0.5);
+    }
+  }, 200);
+}
 </script>
 </body>
 </html>
