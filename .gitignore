@@ -1,3 +1,6 @@
 .DS_Store
 ._*
 *.DS_Store
+stitch_downloads/
+node_modules/
+.env

@@ -143,10 +143,10 @@
     <h1>Le Porc de Chez Nous Admin</h1>
     <p>Connectez-vous pour gérer vos commandes</p>
     <form onsubmit="attemptLogin(event)">
-      <input type="text" id="login-user" placeholder="Identifiant" autocomplete="username" required/>
+      <input type="email" id="login-email" placeholder="Email admin" autocomplete="email" required/>
       <input type="password" id="login-pass" placeholder="Mot de passe" autocomplete="current-password" required/>
-      <p class="login-error" id="login-error">Identifiant ou mot de passe incorrect</p>
-      <button type="submit">Se connecter</button>
+      <p class="login-error" id="login-error">Email ou mot de passe incorrect</p>
+      <button type="submit" id="login-btn">Se connecter</button>
     </form>
   </div>
 </div>
@@ -222,49 +222,52 @@ try {
   console.error("Supabase Init Error:", err);
 }
 
-// ─── Admin Credentials ──────────────────────────
-// ⚠️ IMPORTANT: Changez ces identifiants en production!
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'chariow2025';
-
+// ─── Auth via Supabase (sécurisé) ────────────────
 let currentFilter = 'all';
 let pendingAction = null;
 
-// ─── Auth ──────────────────────────────────────
-function attemptLogin(e) {
+async function attemptLogin(e) {
   e.preventDefault();
+  const btn = document.getElementById('login-btn');
+  const errorEl = document.getElementById('login-error');
+  errorEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Connexion...';
+
   try {
-    const user = document.getElementById('login-user').value.trim().toLowerCase();
+    const email = document.getElementById('login-email').value.trim();
     const pass = document.getElementById('login-pass').value;
-    if (user === ADMIN_USER && pass === ADMIN_PASS) {
-      sessionStorage.setItem('chariow_admin', 'true');
-      sessionStorage.setItem('chariow_admin_user', user);
-      showDashboard();
-    } else {
-      document.getElementById('login-error').style.display = 'block';
-      document.getElementById('login-pass').value = '';
-    }
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password: pass });
+    
+    if (error) throw error;
+    showDashboard(data.user.email);
   } catch (err) {
     console.error("Login Error:", err);
-    alert("Erreur technique lors de la connexion : " + err.message);
+    errorEl.style.display = 'block';
+    document.getElementById('login-pass').value = '';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Se connecter';
   }
 }
 
-function showDashboard() {
+function showDashboard(email) {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('admin-dashboard').classList.add('active');
-  document.getElementById('admin-username').textContent = sessionStorage.getItem('chariow_admin_user') || 'Admin';
+  document.getElementById('admin-username').textContent = email || 'Admin';
   loadOrders();
 }
 
-function logout() {
-  sessionStorage.removeItem('chariow_admin');
-  sessionStorage.removeItem('chariow_admin_user');
+async function logout() {
+  await supabase.auth.signOut();
   location.reload();
 }
 
-// Check session on load
-if (sessionStorage.getItem('chariow_admin') === 'true') showDashboard();
+// Vérifier la session existante au chargement
+(async () => {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) showDashboard(session.user.email);
+})();
 
 // ─── Load Orders ──────────────────────────────
 async function loadOrders() {
